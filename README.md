@@ -20,14 +20,3 @@ Submit a pull request.
 
 # License
 This project is licensed under the MIT License.
-
-# Acknowledgments
-Font Awesome for providing free icons.
-
-Conditions: The license requires that the original copyright notice and the license text are included in all copies or substantial portions of the software.
-
-Applicability: The license is permissive, allowing users to modify and use the software for both commercial and non-commercial purposes.
-
-Compatibility: It's compatible with other licenses, enabling developers to combine MIT-licensed code with code under different licenses.
-
-The MIT License is known for its simplicity and permissive nature, making it a popular choice for open-source projects. It ensures that users can freely use and modify the software while keeping the liability on the user rather than the software's creator.
