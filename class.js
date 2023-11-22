@@ -14,22 +14,40 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateSchedule(selectedClass, selectedDay) {
       const classSchedule = {
         '8A': {
-          Monday: ['Math', 'Science', 'History', 'English'],
-          Tuesday: ['Science', 'History', 'English', 'Math'],
-          Wednesday: ['History', 'English', 'Math', 'Science'],
-          Thursday: ['English', 'Math', 'Science', 'History'],
-          Friday: ['Math', 'Science', 'History', 'English'],
+          Monday: ['Making Meaning', 'English', 'Global Venture', 'Agile Minds'],
+          Tuesday: ['Genius Hour', 'Maths', 'Science', 'Making Meaning'],
+          Wednesday: ['English', 'Global Venture', 'Agile Minds', 'Maths'],
+          Thursday: ['Science', 'Making Meaning', 'English', 'Sport'],
+          Friday: ['Global Venture', 'Agile Minds', 'Math', 'Science'],
           Saturday: ['No class'],
           Sunday: ['No class']
         },
         '8B': {
-        // Define schedule for 8B for each day
+          Monday: ['Creative Lab', 'English', 'Next Discovery', 'Future Fit'],
+          Tuesday: ['Genius Hour', 'Maths', 'Science', 'Creative Lab'],
+          Wednesday: ['English', 'Next Discovery', 'Future Fit', 'Maths'],
+          Thursday: ['Science', 'Creative Lab', 'English', 'Sport'],
+          Friday: ['Next Discovery', 'Future Fit', 'Math', 'Science'],
+          Saturday: ['No class'],
+          Sunday: ['No class']
         },
         '8C': {
-        // Define schedule for 8B for each day
+          Monday: ['Maths', 'Science', 'Making Meaning', 'English'],
+          Tuesday: ['Genius Hour', 'Global Venture', 'Agile Minds', 'Maths'],
+          Wednesday: ['Science', 'Making Meaning', 'English', 'Global Venture'],
+          Thursday: ['Agile Minds', 'Maths', 'Science', 'Sport'],
+          Friday: ['Making Meaning', 'English', 'Global Venture', 'Agile Minds'],
+          Saturday: ['No class'],
+          Sunday: ['No class']
           },
         '8D': {
-        // Define schedule for 8B for each day
+          Monday: ['Maths', 'Science', 'Creative Lab', 'English'],
+          Tuesday: ['Genius Hour', 'Next Discovery', 'Future Fit', 'Maths'],
+          Wednesday: ['Science', 'Creative Lab', 'English', 'Next Discovery'],
+          Thursday: ['Future Fit', 'Maths', 'Science', 'Sport'],
+          Friday: ['Creative Lab', 'English', 'Next Discovery', 'Future Fit'],
+          Saturday: ['No class'],
+          Sunday: ['No class']
         },
         '8E': {
             Monday: ['Global Venture', 'Agile Minds', 'Math', 'Science'],
