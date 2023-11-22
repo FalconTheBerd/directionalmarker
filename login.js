@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Store authentication status in localStorage
         localStorage.setItem("authenticated", true);
         localStorage.setItem("name", usernameInput.value);
-        window.location.href = "home.html"; // Redirect to dashboard or authenticated page
+        window.location.href = "index.html"; // Redirect to dashboard or authenticated page
         alert("Successfully Signed In!");
       } else {
         loginError.textContent = "Invalid username or password";
