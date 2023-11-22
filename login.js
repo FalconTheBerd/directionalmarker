@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // Array to store username and password (for demonstration purposes)
     const users = [
-      { username: "user1", password: "pass1" },
-      { username: "user2", password: "pass2" },
-      { username: "user3", password: "pass3" },
+      { username: "LachlanDwyer", password: "Falcon" },
+      { username: "TerryTsoukalas", password: "Fortniteisbad" },
+      { username: "Admin", password: "Compass" },
     ];
   
     loginForm.addEventListener("submit", function (event) {
