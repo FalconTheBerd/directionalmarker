@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+  <!--<script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>-->
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="chat.css">
+  <meta name="viewport" content="width=device-width">
+</head>
+<body>
+
+    <header>
+        <h1>Chat</h1>
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="class.html">Classes</a></li>
+            <li><a href="chat.html">Chat</a></li>
+            <li><a href="login.html">Log In</a></li>
+          </ul>
+        </nav>
+      </header>
+
+  <div class="members-count">-</div>
+  <div class="members-list">-</div>
+  <div class="messages"></div>
+  <form class="message-form" onsubmit="return false;">
+    <input class="message-form__input" placeholder="Type a message.." type="text"/>
+    <input class="message-form__button" value="Send" type="submit"/>
+  </form>
+  <script src="chat.js"></script>
+  <script src="auth.js"></script>
+</body>
+<footer>
+    <p>&copy; 2023 DirectionalMarker</p>
+  </footer>
+
+</html>

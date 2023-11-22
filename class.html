@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule - DirectionalMarker</title>
+  <link rel="stylesheet" href="class.css">
+</head>
+<body>
+  <header>
+    <h1>Schedule</h1>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="class.html">Classes</a></li>
+        <li><a href="chat.html">Chat</a></li>
+        <li><a href="login.html">Log In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="class-boxes">
+      <div class="class-box" id="class1"></div>
+      <div class="class-box" id="class2"></div>
+      <div class="class-box" id="class3"></div>
+      <div class="class-box" id="class4"></div>
+    </div>
+    
+    <div class="class-selector">
+      <label for="classSelect">Select a class:</label>
+      <select id="classSelect">
+        <option value="8A">8A</option>
+        <option value="8B">8B</option>
+        <option value="8C">8C</option>
+        <option value="8D">8D</option>
+        <option value="8E">8E</option>
+        <option value="8F">8F</option>
+        <!-- Add other class options -->
+      </select>
+    </div>
+
+    <div class="day-selector">
+      <label for="daySelect">Select a day:</label>
+      <select id="daySelect">
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+      </select>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 DirectionalMarker</p>
+  </footer>
+
+  <script src="class.js"></script>
+  <script src="auth.js"></script>
+
+</body>
+</html>

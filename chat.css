@@ -1,0 +1,85 @@
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0px;
+      display: flex;
+      flex-direction: column;
+      max-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .members-count,
+    .members-list,
+    .messages {
+      border: 1px solid #e4e4e4;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    header {
+        background-color: #1377F0;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+      
+      header h1 {
+        margin: 0;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+      }
+      
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
+      
+      nav ul li a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+    .messages {
+      flex-shrink: 1;
+      overflow: auto;
+    }
+
+    .message {
+      padding: 5px 0;
+    }
+    .message .member {
+      display: inline-block;
+    }
+
+    .member {
+      padding-right: 10px;
+      position: relative;
+    }
+
+    .message-form {
+      display: flex;
+      flex-shrink: 0;
+    }
+    .message-form__input {
+      flex-grow: 1;
+      border: 1px solid #dfdfdf;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+    .message-form__button {
+      margin: 10px;
+    }
+
+    footer {
+        text-align: center;
+        background-color: #1377F0;
+        color: #fff;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
