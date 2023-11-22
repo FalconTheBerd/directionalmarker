@@ -1,10 +1,15 @@
 // PS! Replace this with your own channel ID
 // If you use this channel ID your app will stop working in the future
 const CLIENT_ID = 'kxQK5qQQfAPZbfcE';
+const username = localStorage.getItem("name");
+console.log(username)
 
 const drone = new ScaleDrone(CLIENT_ID, {
   data: { // Will be sent out as clientData via events
-    name: getRandomName(),
+    name: username,
+    color: getRandomColor(),
+  },
+});
     color: getRandomColor(),
   },
 });
