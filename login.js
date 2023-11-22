@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (user) {
         // Store authentication status in localStorage
         localStorage.setItem("authenticated", true);
+        localStorage.setItem("name", usernameInput.value)
         window.location.href = "home.html"; // Redirect to dashboard or authenticated page
         alert("Successfully Signed In!");
       } else {
