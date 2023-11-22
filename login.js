@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       { username: "LachlanDwyer", password: "Falcon" },
       { username: "TerryTsoukalas", password: "Fortniteisbad" },
       { username: "Admin", password: "Compass" },
+      { username: "LalitaGracePrestonHaira", password: "Hell0!" },
     ];
   
     loginForm.addEventListener("submit", function (event) {
