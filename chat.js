@@ -10,9 +10,6 @@ const drone = new ScaleDrone(CLIENT_ID, {
     color: getRandomColor(),
   },
 });
-    color: getRandomColor(),
-  },
-});
 
 let members = [];
 
