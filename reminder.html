@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DirectionalMarker - Reminders</title>
+  <link rel="stylesheet" href="reminder.css">
+</head>
+<body>
+  <header>
+    <h1>Reminders</h1>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="class.html">Classes</a></li>
+        <li><a href="chat.html">Chat</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Log In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="reminder-section">
+      <h2>Add Reminder</h2>
+      <form id="reminderForm" class="reminder-form">
+        <input type="text" id="reminderInput" placeholder="Enter your reminder" required>
+        <input type="datetime-local" id="dateInput" required>
+        <button type="submit">Add Reminder</button>
+      </form>
+    </section>
+
+    <section class="reminder-list">
+      <h2>Reminder List</h2>
+      <ul id="reminderList"></ul>
+    </section>
+  </main>
+
+  <script src="reminder.js"></script>
+</body>
+</html>
