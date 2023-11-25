@@ -8,7 +8,7 @@ Chat: Join discussions and communicate with classmates.
 Contact Us: Send messages or inquiries to the administration.
 # Getting Started
 To use DirectionalMarker, follow these steps:
-Go to https://falcontheberd.github.io/DirectionalMarker/home.html
+Go to https://falcontheberd.github.io/directionalmarker
 
 # Contributing
 If you'd like to contribute to DirectionalMarker, follow these steps:
