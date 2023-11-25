@@ -25,9 +25,15 @@
   <div class="login-container">
     <h2>Login</h2>
     <form id="loginForm">
-      <input type="text" id="username" placeholder="Username">
-      <input type="password" id="password" placeholder="Password">
-      <button type="submit">Login</button>
+      <div class="input-container">
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+      </div>
+      <div class="checkbox-container">
+        <input type="checkbox" id="termsCheckbox">
+        <label for="termsCheckbox">I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a> and <a href="privacy-policy.html" target="_blank">Privacy Policy</a></a></label>
+      </div>
+      <button type="submit" id="loginButton" disabled>Login</button>
     </form>
     <p id="loginError" class="error-message"></p>
   </div>
@@ -35,4 +41,5 @@
   <script src="login.js"></script>
 </body>
 </html>
+
 
