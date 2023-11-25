@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const reminderForm = document.getElementById("reminderForm");
   const reminderList = document.getElementById("reminderList");
   let reminders = JSON.parse(localStorage.getItem('reminders')) || [];
+  let reminderTimeouts = [];
 
   reminders.forEach((reminder, index) => {
     displayReminder(reminder, index);
@@ -42,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
     deleteButton.addEventListener("click", function () {
       reminders.splice(index, 1);
       localStorage.setItem('reminders', JSON.stringify(reminders));
+
+      clearTimeout(reminderTimeouts[index]); // Clear the associated timeout
       reminderList.removeChild(listItem);
     });
 
@@ -49,21 +52,19 @@ document.addEventListener("DOMContentLoaded", function () {
     listItem.appendChild(deleteButton);
     reminderList.appendChild(listItem);
 
-    // Check if the reminder's time is in the future
     const currentTime = new Date();
     if (currentTime < reminderDate) {
       const timeDifference = reminderDate - currentTime;
 
-      // Set timeout to execute a function when the time is reached
-      setTimeout(() => {
-        // Run your command or function here
-        console.log(`Reminder for ${reminder.text} at ${reminder.datetime} is triggered.`);
-        var notify = new Notification(`Reminder for ${reminder.text}`);
+      const timeout = setTimeout(() => {
+        var notify = new Notification(`${reminder.text}`);
         reminders.splice(index, 1);
         localStorage.setItem('reminders', JSON.stringify(reminders));
         reminderList.removeChild(listItem);
-        // For example, you could trigger a notification or perform any specific action
       }, timeDifference);
+
+      reminderTimeouts[index] = timeout;
     }
   }
 });
+

@@ -18,7 +18,7 @@ header {
     padding: 20px;
     text-align: center;
 }
-
+ 
 header h1 {
     margin: 0;
 }
@@ -44,6 +44,14 @@ main {
 }
 
 .contact-section {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-section {
     background-color: #fff;
     padding: 20px;
     margin-top: 20px;
