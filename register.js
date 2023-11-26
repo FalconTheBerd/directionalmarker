@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
       };
   
       // Replace 'YOUR_DISCORD_WEBHOOK_URL' with your actual Discord webhook URL
-      const webhookURL = 'https://discord.com/api/webhooks/1176800295163015188/CamNAnY5OojJGVbgGnxnaFIk4zIN1a2bVeL6a4IRDE6xvVYx1ueH-dCZ5gDi-pMtl86i';
+      const webhookURL = 'https://discord.com/api/webhooks/1178252049041858600/NImAZJvRyUP09OmLXNLLBWSKLN9u6srPMQp0lI8b-oeUkmzsDgDT5vaXeINEnvGc2EzN';
   
       // Send the payload to the Discord webhook using fetch
       fetch(webhookURL, {

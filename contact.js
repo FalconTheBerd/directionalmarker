@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function sendToDiscordWebhook(data) {
-    const webhookURL = "https://discord.com/api/webhooks/1176800295163015188/CamNAnY5OojJGVbgGnxnaFIk4zIN1a2bVeL6a4IRDE6xvVYx1ueH-dCZ5gDi-pMtl86i";
+    const webhookURL = "https://discord.com/api/webhooks/1178252258899673088/oHmHlsoeF-WFCRPOaHI9zKAlQQmhXv04C14sVmd-t5Bmcp7jwcylgfoF_oqbXRIeh-FC";
 
     fetch(webhookURL, {
       method: "POST",
