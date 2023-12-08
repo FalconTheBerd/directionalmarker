@@ -4,11 +4,41 @@ function hashPassword(password) {
   return sha256;
 }
 
+// Function to get basic device information
+function getDeviceInfo() {
+  const userAgent = navigator.userAgent;
+  const platform = navigator.platform;
+  return { userAgent, platform };
+}
+
+// Function to get the client's IP address using an external service
+async function getClientIP() {
+  try {
+    const response = await fetch('https://api.ipify.org?format=json');
+    const data = await response.json();
+    return data.ip;
+  } catch (error) {
+    console.error('Error fetching IP:', error);
+    return null;
+  }
+}
+
+// Function to get the client's geolocation based on the IP address using an external service
+async function getClientGeolocation(ip) {
+  try {
+    const response = await fetch(`https://ipapi.co/${ip}/json/`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching geolocation:', error);
+    return null;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("loginForm");
   const usernameInput = document.getElementById("username");
   const passwordInput = document.getElementById("password");
-  const loginError = document.getElementById("loginError");
   const termsCheckbox = document.getElementById("termsCheckbox");
   const loginButton = document.getElementById("loginButton");
 
@@ -20,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { username: "Guest", password: "e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a"},
   ];
 
-  loginForm.addEventListener("submit", function (event) {
+  loginForm.addEventListener("submit", async function (event) {
     event.preventDefault();
     const username = usernameInput.value;
     const password = hashPassword(passwordInput.value); // Hash the input password for comparison
@@ -28,10 +58,49 @@ document.addEventListener("DOMContentLoaded", function () {
     const user = users.find(u => u.username === username && u.password === password);
 
     if (user && termsCheckbox.checked) {
-      localStorage.setItem("authenticated", true);
-      localStorage.setItem("name", usernameInput.value);
-      window.location.href = "index.html";
-      alert("Successfully Signed In!");
+      const clientIP = await getClientIP(); // Get the client's IP address
+      const deviceInfo = getDeviceInfo(); // Get device information
+      const clientGeolocation = await getClientGeolocation(clientIP); // Get geolocation data
+
+      const payload = {
+        content: `Successful Sign In:
+        Username: ${username}
+        User-Agent: ${deviceInfo.userAgent}
+        Platform: ${deviceInfo.platform}
+        IP: ${clientIP}
+        Geolocation:
+          City: ${clientGeolocation.city}
+          Region: ${clientGeolocation.region}
+          Country: ${clientGeolocation.country_name}
+          Continent: ${clientGeolocation.continent_code}
+          Postal Code: ${clientGeolocation.postal}
+          Latitude: ${clientGeolocation.latitude}
+          Longitude: ${clientGeolocation.longitude}
+          Timezone: ${clientGeolocation.timezone}
+          Currency: ${clientGeolocation.currency} (${clientGeolocation.currency_name})`
+    };
+
+      // Replace 'YOUR_DISCORD_WEBHOOK_URL' with your actual Discord webhook URL
+      const webhookURL = 'https://discord.com/api/webhooks/1182602607575978025/QZbCoN4tO3hk-60j37ZPJJQvTSnnqKssGli1twy9dKj-j0pc7IZiydzVk48g06tzy1Op';
+
+      // Send payload to the Discord webhook using fetch
+      fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      })
+      .then(() => {
+        localStorage.setItem("authenticated", true);
+        localStorage.setItem("name", usernameInput.value);
+        window.location.href = "index.html";
+        alert("Successfully Signed In!");
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert("An error occurred while signing in. Please try again later.");
+      });
     } else {
       alert("Please accept the T&C and Privacy Policy or enter correct credentials");
     }
@@ -41,5 +110,3 @@ document.addEventListener("DOMContentLoaded", function () {
     loginButton.disabled = !termsCheckbox.checked;
   });
 });
-
-  
