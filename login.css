@@ -45,12 +45,22 @@ nav ul li a {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 1200px;
-  margin: auto;
+  width: 90%; /* Adjusted width for better responsiveness */
+  max-width: 600px; /* Set maximum width */
+  margin: 20px auto; /* Center the container */
 }
 
 h2 {
   margin-bottom: 20px;
+}
+
+.input-container input{
+  display: block;
+  width: calc(100% - 20px);
+  margin: 10px auto;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 .checkbox-container {
@@ -64,20 +74,16 @@ h2 {
   margin-right: 10px;
 }
 
-.input-container input{
-  border-radius: 5px;
-  margin: 10px
-}
-
 button {
   display: block;
-  width: 100%;
+  width: calc(100% - 20px);
   padding: 8px 20px;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin: 10px auto;
 }
 
 button:hover {
