@@ -7,30 +7,22 @@
   <link rel="stylesheet" href="register.css">
   <link rel="icon" href="logo.jpg" type="image/x-icon">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4L4SRDSX0E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4L4SRDSX0E');
-</script>
 <body>
-    <header>
-        <h1>Register</h1>
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="class.html">Classes</a></li>
-            <li><a href="chat.html">Chat</a></li>
-            <li><a href="reminder.html">Reminders</a></li>
-            <li><a href="contact.html">Contact Me</a></li>
-            <li><a href="login.html">Log In</a></li>
-            <li><a href="register.html">Register</a></li>
-          </ul>
-        </nav>
-      </header>
+  <header>
+    <h1>Register</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="class.html">Classes</a></li>
+        <li><a href="chat.html">Chat</a></li>
+        <li><a href="reminder.html">Reminders</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+        <li><a href="login.html">Log In</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+  
   <div class="register-container">
     <h2>Register</h2>
     <form id="registerForm">
@@ -40,9 +32,12 @@
       <button type="submit" id="registerButton">Register</button>
     </form>
     <p id="registerStatus" class="status-message"></p>
-    <h4 style="color:red">DISCLAIMER</h4>
-    <p>The register process is NOT instant. You will recieve an email when the process is complete.</p>
+    <div class="disclaimer">
+      <h4>DISCLAIMER</h4>
+      <p>The registration process is NOT instant. You will receive an email when the process is complete.</p>
+    </div>
   </div>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
   <script src="register.js"></script>
 </body>

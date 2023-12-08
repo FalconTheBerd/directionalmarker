@@ -18,8 +18,9 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin: 20px auto;
+    width: 90%; /* Adjusted width for better responsiveness */
+    max-width: 400px; /* Set maximum width */
+    margin: 20px auto; /* Center the container */
 }
 
 header {
@@ -77,4 +78,15 @@ button:hover {
 
 .status-message {
     margin-top: 10px;
+}
+
+.disclaimer {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.disclaimer h4 {
+    color: red;
+    margin-bottom: 5px;
+    text-align: center;
 }
