@@ -13,59 +13,59 @@ document.addEventListener("DOMContentLoaded", function () {
   
     function updateSchedule(selectedClass, selectedDay) {
       const classSchedule = {
-        '8A': {
-          Monday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-          Tuesday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-          Wednesday: ['School Holidays','School Holidays','School Holidays','School Holidays'],
-          Thursday: ['School Holidays','School Holidays','School Holidays','School Holidays'],
-          Friday: ['School Holidays','School Holidays','School Holidays','School Holidays'],
+        '9A': {
+          Monday: ['English', 'Maths', 'Science', 'Agile Minds'],
+          Tuesday: ['Sport', 'Genius Hour', 'Elective 1', 'Elective 2'],
+          Wednesday: ['Maths','English','Agile Minds','Science'],
+          Thursday: ['Elective 2','Elective 1','English','Maths'],
+          Friday: ['Science','Agile Minds','Elective 2','Elective 1'],
           Saturday: ['No class'],
           Sunday: ['No class']
         },
-        '8B': {
-          Monday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-          Tuesday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-          Wednesday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-          Thursday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-          Friday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
+        '9B': {
+          Monday: ['English', 'Maths', 'Science', 'Agile Minds'],
+          Tuesday: ['Sport', 'Genius Hour', 'Elective 1', 'Elective 2'],
+          Wednesday: ['Maths','English','Agile Minds','Science'],
+          Thursday: ['Elective 2','Elective 1','English','Maths'],
+          Friday: ['Science','Agile Minds','Elective 2','Elective 1'],
           Saturday: ['No class'],
           Sunday: ['No class']
         },
-        '8C': {
-          Monday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-          Tuesday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-          Wednesday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-          Thursday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-          Friday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-          Saturday: ['No class'],
-          Sunday: ['No class']
-          },
-        '8D': {
-          Monday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-          Tuesday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-          Wednesday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-          Thursday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-          Friday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
+        '9C': {
+          Monday: ['English', 'Maths', 'Science', 'Agile Minds'],
+          Tuesday: ['Sport', 'Genius Hour', 'Elective 1', 'Elective 2'],
+          Wednesday: ['Maths','English','Agile Minds','Science'],
+          Thursday: ['Elective 2','Elective 1','English','Maths'],
+          Friday: ['Science','Agile Minds','Elective 2','Elective 1'],
           Saturday: ['No class'],
           Sunday: ['No class']
         },
-        '8E': {
-            Monday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-            Tuesday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-            Wednesday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-            Thursday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-            Friday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-            Saturday: ['No class'],
-            Sunday: ['No class']
+        '9D': {
+          Monday: ['English', 'Maths', 'Science', 'Agile Minds'],
+          Tuesday: ['Sport', 'Genius Hour', 'Elective 1', 'Elective 2'],
+          Wednesday: ['Maths','English','Agile Minds','Science'],
+          Thursday: ['Elective 2','Elective 1','English','Maths'],
+          Friday: ['Science','Agile Minds','Elective 2','Elective 1'],
+          Saturday: ['No class'],
+          Sunday: ['No class']
         },
-        '8F': {
-            Monday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-            Tuesday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-            Wednesday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-            Thursday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-            Friday: ['School Holidays', 'School Holidays', 'School Holidays', 'School Holidays'],
-            Saturday: ['No class'],
-            Sunday: ['No class']
+        '9E': {
+          Monday: ['English', 'Maths', 'Science', 'Agile Minds'],
+          Tuesday: ['Sport', 'Genius Hour', 'Elective 1', 'Elective 2'],
+          Wednesday: ['Maths','English','Agile Minds','Science'],
+          Thursday: ['Elective 2','Elective 1','English','Maths'],
+          Friday: ['Science','Agile Minds','Elective 2','Elective 1'],
+          Saturday: ['No class'],
+          Sunday: ['No class']
+        },
+        '9F': {
+          Monday: ['English', 'Maths', 'Science', 'Agile Minds'],
+          Tuesday: ['Sport', 'Genius Hour', 'Elective 1', 'Elective 2'],
+          Wednesday: ['Maths','English','Agile Minds','Science'],
+          Thursday: ['Elective 2','Elective 1','English','Maths'],
+          Friday: ['Science','Agile Minds','Elective 2','Elective 1'],
+          Saturday: ['No class'],
+          Sunday: ['No class']
         },
         // Add schedules for other classes
       };
