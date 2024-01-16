@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
     { username: "Admin", password: "fd3f8cb72c0de9c620d239358caacc7b8b5e7420b80e54eab4b90c85de8f1d02" },
     { username: "LalitaGracePrestonHaira", password: "5333a19ac109063be6ab54538de3191d6ed18e094c4f4409f65409feef171ca7" },
     { username: "Guest", password: "e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a"},
-    { username: "Redditor", password: "eb0050f72303bcdbbdc071e2a3bf810c903be8d05cdf09f7c3106f2b6f9878bf"},
   ];
 
   loginForm.addEventListener("submit", async function (event) {

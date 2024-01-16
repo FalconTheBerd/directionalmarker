@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="class-list.css">
+  <link rel="icon" href="logo.jpg" type="image/x-icon">
+  <title>Class Roster - DirectionalMarker</title>
+</head>
+<body>
+
+  <header>
+    <h1><a href="secrets.html">Class Roster</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="class.html">Classes</a></li>
+        <li><a href="class-list.html">Class List</a></li>
+        <li><a href="chat.html">Chat</a></li>
+        <li><a href="reminder.html">Reminders</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+        <li><a href="login.html">Log In</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <label for="classSelector">Select Class:</label>
+    <select id="classSelector" onchange="changeClass()">
+      <option value="class1">9A</option>
+      <option value="class2">9B</option>
+      <option value="class3">9C</option>
+      <option value="class4">9D</option>
+      <option value="class5">9E</option>
+      <option value="class6">9F</option>
+    </select>
+
+    <input type="text" id="searchBar" placeholder="Search by name" oninput="filterNames">
+
+    <div id="rosterContainer" class="roster"></div>
+  </div>
+
+  <script src="class-list.js"></script>
+</body>
+</html>

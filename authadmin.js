@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const allowedValues = ["Admin"]; // Replace these with your allowed authentication values
+  const allowedValues = ["Admin", "LachlanDwyer"]; // Replace these with your allowed authentication values
   const name = localStorage.getItem("name");
 
   if (!name || !allowedValues.includes(name)) {
