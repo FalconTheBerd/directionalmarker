@@ -1,66 +1,67 @@
-// Function to hash the password using SHA-256
-function hashPassword(password) {
-  const sha256 = CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
-  return sha256;
-}
-
-// Function to get basic device information
-function getDeviceInfo() {
-  const userAgent = navigator.userAgent;
-  const platform = navigator.platform;
-  return { userAgent, platform };
-}
-
-// Function to get the client's IP address using an external service
-async function getClientIP() {
-  try {
-    const response = await fetch('https://api.ipify.org?format=json');
-    const data = await response.json();
-    return data.ip;
-  } catch (error) {
-    console.error('Error fetching IP:', error);
-    return null;
-  }
-}
-
-// Function to get the client's geolocation based on the IP address using an external service
-async function getClientGeolocation(ip) {
-  try {
-    const response = await fetch(`https://ipapi.co/${ip}/json/`);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error fetching geolocation:', error);
-    return null;
-  }
-}
-
 document.addEventListener("DOMContentLoaded", function () {
+  // Function to hash the password using SHA-256
+  function hashPassword(password) {
+    return CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
+  }
+
+  // Function to get basic device information
+  function getDeviceInfo() {
+    const userAgent = navigator.userAgent;
+    const platform = navigator.platform;
+    return { userAgent, platform };
+  }
+
+  // Function to get the client's IP address using an external service
+  async function getClientIP() {
+    try {
+      const response = await fetch('https://api.ipify.org?format=json');
+      const data = await response.json();
+      return data.ip;
+    } catch (error) {
+      console.error('Error fetching IP:', error);
+      return null;
+    }
+  }
+
+  // Function to get the client's geolocation based on the IP address using an external service
+  async function getClientGeolocation(ip) {
+    try {
+      const response = await fetch(`https://ipapi.co/${ip}/json/`);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error fetching geolocation:', error);
+      return null;
+    }
+  }
+
   const loginForm = document.getElementById("loginForm");
   const usernameInput = document.getElementById("username");
   const passwordInput = document.getElementById("password");
   const termsCheckbox = document.getElementById("termsCheckbox");
-  const loginButton = document.getElementById("loginButton");
-
-  const users = [
-    { username: "LachlanDwyer", password: "beac5ecc982f82ee4d00161c68a989becb1aa8ca90980c87e07db167113c2dfd"},
-    { username: "TerryTsoukalas", password: "8f9be23677a0c32b6c2a946ea50d1673525d4740870b245a064f59c6b24c6422" },
-    { username: "Admin", password: "fd3f8cb72c0de9c620d239358caacc7b8b5e7420b80e54eab4b90c85de8f1d02" },
-    { username: "LalitaGracePrestonHaira", password: "e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a" },
-    { username: "Guest", password: "e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a"},
-  ];
 
   loginForm.addEventListener("submit", async function (event) {
     event.preventDefault();
-    const username = usernameInput.value;
-    const password = hashPassword(passwordInput.value); // Hash the input password for comparison
 
-    const user = users.find(u => u.username === username && u.password === password);
+    const username = usernameInput.value;
+    const inputPassword = passwordInput.value;
+    const hashedInputPassword = hashPassword(inputPassword);
+
+    const users = [
+      { username: "LachlanDwyer", password: "beac5ecc982f82ee4d00161c68a989becb1aa8ca90980c87e07db167113c2dfd"},
+      { username: "TerryTsoukalas", password: "9c737ccf96e9a8940c703cd50c8772e659a89813e5a988d393beeffe91029208" },
+      { username: "Admin", password: "f082ac980336071f811f28ac635cd7733b90b92e51a101943067eed38e525063" },
+      { username: "LalitaGracePrestonHaira", password: "2547dad4b7d09aa4ccdedca1f423cc16e3648b8e3dd85bed59fd45aacd39b467" },
+      { username: "Guest", password: "e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a"},
+      { username: "CharlizeHeron", password: "586b9b1fdde6aae5b20c9d4e2389582debca3a424a149e046fa931b7a6e9b6e0"},
+    ];
+
+    const user = users.find(u => u.username === username && u.password === hashedInputPassword);
 
     if (user && termsCheckbox.checked) {
-      const clientIP = await getClientIP(); // Get the client's IP address
-      const deviceInfo = getDeviceInfo(); // Get device information
-      const clientGeolocation = await getClientGeolocation(clientIP); // Get geolocation data
+      const clientIP = await getClientIP();
+      const deviceInfo = getDeviceInfo();
+      const clientGeolocation = await getClientGeolocation(clientIP);
 
       const payload = {
         content: `Successful Sign In:
@@ -78,12 +79,10 @@ document.addEventListener("DOMContentLoaded", function () {
           Longitude: ${clientGeolocation.longitude}
           Timezone: ${clientGeolocation.timezone}
           Currency: ${clientGeolocation.currency} (${clientGeolocation.currency_name})`
-    };
+      };
 
-      // Replace 'YOUR_DISCORD_WEBHOOK_URL' with your actual Discord webhook URL
       const webhookURL = 'https://discord.com/api/webhooks/1182602607575978025/QZbCoN4tO3hk-60j37ZPJJQvTSnnqKssGli1twy9dKj-j0pc7IZiydzVk48g06tzy1Op';
 
-      // Send payload to the Discord webhook using fetch
       fetch(webhookURL, {
         method: 'POST',
         headers: {
@@ -107,6 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   termsCheckbox.addEventListener('change', function () {
-    loginButton.disabled = !termsCheckbox.checked;
+    document.getElementById("loginButton").disabled = !termsCheckbox.checked;
   });
 });
