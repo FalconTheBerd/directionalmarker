@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="class-list.css">
-  <link rel="icon" href="logo.jpg" type="image/x-icon">
-  <title>Class Roster - DirectionalMarker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="class-list.css">
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <title>Class Roster - DirectionalMarker</title>
 </head>
 <body>
 
-  <header>
-    <h1>Class Roster</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="class.html">Classes</a></li>
-        <li><a href="class-list.html">Class List</a></li>
-        <li><a href="chat.html">Chat</a></li>
-        <li><a href="reminder.html">Reminders</a></li>
-        <li><a href="contact.html">Contact Me</a></li>
-        <li><a href="login.html">Log In</a></li>
-        <li><a href="register.html">Register</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <h1>Class Roster</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="class.html">Classes</a></li>
+                <li><a href="class-list.html">Class List</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="reminder.html">Reminders</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+                <li><a href="login.html">Log In</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <div class="container">
-    <label for="classSelector">Select Class:</label>
-    <select id="classSelector" onchange="changeClass()">
-      <option value="class1">9A</option>
-      <option value="class2">9B</option>
-      <option value="class3">9C</option>
-      <option value="class4">9D</option>
-      <option value="class5">9E</option>
-      <option value="class6">9F</option>
-    </select>
+    <div class="container">
+        <label for="classSelector">Select Class:</label>
+        <select id="classSelector">
+            <option value="All">All</option>
+            <option value="9A">9A</option>
+            <option value="9B">9B</option>
+            <option value="9C">9C</option>
+            <option value="9D">9D</option>
+            <option value="9E">9E</option>
+            <option value="9F">9F</option>
+        </select>
 
-    <input type="text" id="searchBar" placeholder="Search by name" oninput="filterNames">
+        <input type="text" id="searchBar" placeholder="Search by name">
 
-    <div id="rosterContainer" class="roster"></div>
+        <div id="rosterContainer" class="roster"></div>
 
-    <!-- Title and body text box -->
-    <div class="info-box">
-      <h2>Trial Period</h2>
-      <p>For the next week you do not need to login to view this list. When the term starts a login will be required to view this list.</p>
+        <!-- Title and body text box -->
+        <div class="info-box">
+            <h2>Trial Period</h2>
+            <p>For the next week you do not need to login to view this list. When the term starts a login will be required to view this list.</p>
+        </div>
     </div>
-  </div>
 
-  <script src="class-list.js"></script>
+    <script src="class-list.js"></script>
 </body>
 </html>

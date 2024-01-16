@@ -2,57 +2,92 @@ document.addEventListener("DOMContentLoaded", function () {
   const classSelector = document.getElementById('classSelector');
   const searchBar = document.getElementById('searchBar');
   const rosterContainer = document.getElementById('rosterContainer');
-  
+
   // Sample data - Replace with your actual data
-  const classRosters = {
-    class1: ['Lachlan Dwyer', 'Jericho Conibeer', 'Joshua Gordon', 'Samuel Clarke', 'Zion Rouvi', 'Emily Noble-Shea', 'Sasha Foster', 'Alex Farley','Julie Horkova'],
-    class2: ['Lalita-Grace Preston-Haira', 'Edie Leehy', 'Isis Bamman', 'Ghena Bader', 'Pearl Quigly', 'Madeline Saw', 'Kylie Bogdanovski','Leo Holmes'],
-    class3: ['Oliver Jip', 'Suki Tuxworth', 'Cooper Arhanic', 'Emily Di Guglielmo', 'Holly Rabbidge', 'Jayden Harvey', 'Bayla Perry-Kuhn','Blake Szymenski'],
-    class4: ['Terry Tsoukalas', 'Ava Hering', 'Hazel Hansen Gahan', 'Mika Paraskevas', 'Annalise Nicholaou'],
-    class5: ['Jolie Bendl', 'Nadine Igarinaza', 'Valentina Perez-Milson', 'Sari Woodward', 'Chloe Wall', 'Abbie Giang', 'Lucy Rawlinson','Jude Arrowsmith', 'Lincoln Witherspoon','Tamyka Bedlington'],
-    class6: ['Melina Kastanis', 'Eva Michaels De Alberqeque', 'Hudson Kratz', 'Abigail Bates','Koby Camilleri','Huntah Pett'],
-  };
+  const classRosters = [
+    { name: 'Lachlan Dwyer', class: '9A' },
+    { name: 'Jericho Conibeer', class: '9A' },
+    { name: 'Joshua Gordon', class: '9A' },
+    { name: 'Samuel Clarke', class: '9A' },
+    { name: 'Zion Rouvi', class: '9A' },
+    { name: 'Emily Noble-Shea', class: '9A' },
+    { name: 'Sasha Foster', class: '9A' },
+    { name: 'Alex Farley', class: '9A' },
+    { name: 'Julie Horkova', class: '9A' },
 
-  function changeClass() {
-    const selectedClass = classSelector.value;
-    displayRoster(classRosters[selectedClass]);
-  }
+    { name: 'Lalita-Grace Preston-Haira', class: '9B' },
+    { name: 'Edie Leehy', class: '9B' },
+    { name: 'Isis Bamman', class: '9B' },
+    { name: 'Ghena Bader', class: '9B' },
+    { name: 'Pearl Quigly', class: '9B' },
+    { name: 'Madeline Saw', class: '9B' },
+    { name: 'Kylie Bogdanovski', class: '9B' },
+    { name: 'Leo Holmes', class: '9B' },
 
-  function filterNames() {
-    const searchTerm = searchBar.value.toLowerCase();
-    if (searchTerm === '') {
-      changeClass();
-    } else {
-      const filteredRoster = Object.values(classRosters)
-        .flat()
-        .filter(name => name.toLowerCase().includes(searchTerm));
+    { name: 'Oliver Jip', class: '9C' },
+    { name: 'Suki Tuxworth', class: '9C' },
+    { name: 'Cooper Arhanic', class: '9C' },
+    { name: 'Emily Di Guglielmo', class: '9C' },
+    { name: 'Holly Rabbidge', class: '9C' },
+    { name: 'Jayden Harvey', class: '9C' },
+    { name: 'Bayla Perry-Kuhn', class: '9C' },
+    { name: 'Blake Szymenski', class: '9C' },
+    { name: 'Brooklyn Warea', class: '9C' },
+
+    { name: 'Terry Tsoukalas', class: '9D' },
+    { name: 'Ava Hering', class: '9D' },
+    { name: 'Hazel Hansen Gahan', class: '9D' },
+    { name: 'Mika Paraskevas', class: '9D' },
+    { name: 'Annalise Nicholaou', class: '9D' },
+
+    { name: 'Jolie Bendl', class: '9E' },
+    { name: 'Nadine Igarinaza', class: '9E' },
+    { name: 'Valentina Perez-Milson', class: '9E' },
+    { name: 'Sari Woodward', class: '9E' },
+    { name: 'Chloe Wall', class: '9E' },
+    { name: 'Abbie Giang', class: '9E' },
+    { name: 'Lucy Rawlinson', class: '9E' },
+    { name: 'Jude Arrowsmith', class: '9E' },
+    { name: 'Lincoln Witherspoon', class: '9E' },
+    { name: 'Tamyka Bedlington', class: '9E' },
+
+    { name: 'Melina Kastanis', class: '9F' },
+    { name: 'Eva Michaels De Alberqeque', class: '9F' },
+    { name: 'Hudson Kratz', class: '9F' },
+    { name: 'Abigail Bates', class: '9F' },
+    { name: 'Koby Camilleri', class: '9F' },
+    { name: 'Huntah Pett', class: '9F' }
+];
+
+
+  function filterRoster() {
+      const selectedClass = classSelector.value;
+      const searchTerm = searchBar.value.toLowerCase();
+
+      const filteredRoster = classRosters.filter(student =>
+          (selectedClass === 'All' || student.class === selectedClass) &&
+          student.name.toLowerCase().includes(searchTerm)
+      );
+
       displayRoster(filteredRoster);
-    }
   }
 
   function displayRoster(roster) {
-    // Sort names alphabetically by last name
-    roster.sort((a, b) => {
-      const lastNameA = a.split(' ').pop().toLowerCase();
-      const lastNameB = b.split(' ').pop().toLowerCase();
-      return lastNameA.localeCompare(lastNameB);
-    });
+      rosterContainer.innerHTML = '';
 
-    rosterContainer.innerHTML = '';
+      roster.forEach(student => {
+          const studentDiv = document.createElement('div');
+          studentDiv.classList.add('student');
+          studentDiv.textContent = `${student.name} - ${student.class}`;
 
-    roster.forEach(name => {
-      const studentDiv = document.createElement('div');
-      studentDiv.classList.add('student');
-      studentDiv.textContent = name;
-
-      rosterContainer.appendChild(studentDiv);
-    });
+          rosterContainer.appendChild(studentDiv);
+      });
   }
 
   // Initial display
-  changeClass();
+  filterRoster();
 
   // Attach event listeners
-  classSelector.addEventListener('change', changeClass);
-  searchBar.addEventListener('input', filterNames);
+  classSelector.addEventListener('change', filterRoster);
+  searchBar.addEventListener('input', filterRoster);
 });
