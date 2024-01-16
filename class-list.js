@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const classRosters = {
     class1: ['Lachlan Dwyer', 'Jericho Conibeer', 'Joshua Gordon', 'Samuel Clarke', 'Zion Rouvi', 'Emily Noble-Shea', 'Sasha Foster', 'Alex Farley'],
     class2: ['Lalita-Grace Preston-Haira', 'Edie Leehy', 'Isis Bamman', 'Ghena Bader', 'Pearl Quigly', 'Madeline Saw', 'Kylie Bogdanovski','Leo Holmes'],
-    class3: ['Oliver Jip', 'Suki Tuxworth', 'Cooper Arhanic', 'Emily Di Guglielmo', 'Holly Rabbidge', 'Jayden Harvey', 'Bayla Perry-Kuhn'],
+    class3: ['Oliver Jip', 'Suki Tuxworth', 'Cooper Arhanic', 'Emily Di Guglielmo', 'Holly Rabbidge', 'Jayden Harvey', 'Bayla Perry-Kuhn','Blake Szymenski'],
     class4: ['Terry Tsoukalas', 'Ava Hering', 'Hazel Hansen Gahan', 'Mika Paraskevas', 'Annalise Nicholaou'],
     class5: ['Jolie Bendl', 'Nadine Igarinaza', 'Valentina Perez-Milson', 'Sari Woodward', 'Chloe Wall', 'Abbie Giang', 'Lucy Rawlinson','Jude Arrowsmith', 'Lincoln Witherspoon','Tamyka Bedlington'],
     class6: ['Melina Kastanis', 'Eva Michaels De Alberqeque', 'Hudson Kratz', 'Abigail Bates','Koby Camilleri','Huntah Pett'],
