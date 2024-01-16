@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // Sample data - Replace with your actual data
   const classRosters = {
-    class1: ['Lachlan Dwyer', 'Jericho Conibeer', 'Joshua Gordon', 'Samuel Clarke', 'Zion Rouvi', 'Emily Noble-Shea', 'Sasha Foster', 'Alex Farley'],
+    class1: ['Lachlan Dwyer', 'Jericho Conibeer', 'Joshua Gordon', 'Samuel Clarke', 'Zion Rouvi', 'Emily Noble-Shea', 'Sasha Foster', 'Alex Farley','Julie Horkova'],
     class2: ['Lalita-Grace Preston-Haira', 'Edie Leehy', 'Isis Bamman', 'Ghena Bader', 'Pearl Quigly', 'Madeline Saw', 'Kylie Bogdanovski','Leo Holmes'],
     class3: ['Oliver Jip', 'Suki Tuxworth', 'Cooper Arhanic', 'Emily Di Guglielmo', 'Holly Rabbidge', 'Jayden Harvey', 'Bayla Perry-Kuhn','Blake Szymenski'],
     class4: ['Terry Tsoukalas', 'Ava Hering', 'Hazel Hansen Gahan', 'Mika Paraskevas', 'Annalise Nicholaou'],
