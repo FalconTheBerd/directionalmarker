@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     class1: ['Lachlan Dwyer', 'Jericho Conibeer', 'Joshua Gordon', 'Samuel Clarke', 'Zion Rouvi', 'Emily Noble-Shea', 'Sasha Foster', 'Alex Farley'],
     class2: ['Lalita-Grace Preston-Haira', 'Edie Leehy', 'Isis Bamman', 'Ghena Bader', 'Pearl Quigly', 'Madeline Saw', 'Kylie Bogdanovski','Leo Holmes'],
     class3: ['Oliver Jip', 'Suki Tuxworth', 'Cooper Arhanic', 'Emily Di Guglielmo', 'Holly Rabbidge', 'Jayden Harvey', 'Bayla Perry-Kuhn'],
-    class4: ['Terry Tsoukalas', 'Ava Hering', 'Hazel Hansen Gahan', 'Mika Paraskevas'],
+    class4: ['Terry Tsoukalas', 'Ava Hering', 'Hazel Hansen Gahan', 'Mika Paraskevas', 'Annalise Nicholaou'],
     class5: ['Jolie Bendl', 'Nadine Igarinaza', 'Valentina Perez-Milson', 'Sari Woodward', 'Chloe Wall', 'Abbie Giang', 'Lucy Rawlinson','Jude Arrowsmith', 'Lincoln Witherspoon','Tamyka Bedlington'],
     class6: ['Melina Kastanis', 'Eva Michaels De Alberqeque', 'Hudson Kratz', 'Abigail Bates','Koby Camilleri','Huntah Pett'],
   };
@@ -20,10 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function filterNames() {
     const searchTerm = searchBar.value.toLowerCase();
-    const filteredRoster = Object.values(classRosters)
-      .flat()
-      .filter(name => name.toLowerCase().includes(searchTerm));
-    displayRoster(filteredRoster);
+    if (searchTerm === '') {
+      changeClass();
+    } else {
+      const filteredRoster = Object.values(classRosters)
+        .flat()
+        .filter(name => name.toLowerCase().includes(searchTerm));
+      displayRoster(filteredRoster);
+    }
   }
 
   function displayRoster(roster) {
