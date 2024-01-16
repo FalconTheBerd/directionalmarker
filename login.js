@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { username: "LachlanDwyer", password: "beac5ecc982f82ee4d00161c68a989becb1aa8ca90980c87e07db167113c2dfd"},
     { username: "TerryTsoukalas", password: "8f9be23677a0c32b6c2a946ea50d1673525d4740870b245a064f59c6b24c6422" },
     { username: "Admin", password: "fd3f8cb72c0de9c620d239358caacc7b8b5e7420b80e54eab4b90c85de8f1d02" },
-    { username: "LalitaGracePrestonHaira", password: "5333a19ac109063be6ab54538de3191d6ed18e094c4f4409f65409feef171ca7" },
+    { username: "LalitaGracePrestonHaira", password: "e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a" },
     { username: "Guest", password: "e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a"},
   ];
 
