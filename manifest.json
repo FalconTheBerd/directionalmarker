@@ -1,8 +1,8 @@
 {
     "name": "Directional Marker",
-    "short_name": "DirectionalMarker",
+    "short_name": "Directional Marker",
     "description": "Student-based Compass",
-    "start_url": "/index.html",
+    "start_url": "/directionalmarker/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
