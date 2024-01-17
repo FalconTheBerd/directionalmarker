@@ -57,7 +57,19 @@ document.addEventListener("DOMContentLoaded", function () {
       const timeDifference = reminderDate - currentTime;
 
       const timeout = setTimeout(() => {
-        var notify = new Notification(`${reminder.text}`);
+        if ('Notification' in window && Notification.permission === 'granted') {
+          // Use Notification API for Android and Windows
+          var notify = new Notification(`${reminder.text}`);
+        } else if ('serviceWorker' in navigator && 'PushManager' in window) {
+          // Use Web Push API for iOS and other platforms that support service workers
+          registerServiceWorker().then(registration => {
+            registration.showNotification(`${reminder.text}`);
+          });
+        } else {
+          // Fallback to alert for unsupported platforms
+          alert(`${reminder.text}`);
+        }
+
         reminders.splice(index, 1);
         localStorage.setItem('reminders', JSON.stringify(reminders));
         reminderList.removeChild(listItem);
@@ -66,5 +78,14 @@ document.addEventListener("DOMContentLoaded", function () {
       reminderTimeouts[index] = timeout;
     }
   }
-});
 
+  function registerServiceWorker() {
+    return navigator.serviceWorker.register('service-worker.js')
+      .then(function(registration) {
+        return registration;
+      })
+      .catch(function(error) {
+        console.error('Service Worker registration failed:', error);
+      });
+  }
+});
