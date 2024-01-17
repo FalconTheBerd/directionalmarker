@@ -24,21 +24,31 @@
     </nav>
   </header>
   
-  <div class="register-container">
-    <h2>Register</h2>
-    <form id="registerForm">
-      <input type="text" id="name" placeholder="Name" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="password" id="password" placeholder="Password" required>
-      <button type="submit" id="registerButton">Register</button>
-    </form>
-    <p id="registerStatus" class="status-message"></p>
-    <div class="disclaimer">
-      <h4>DISCLAIMER</h4>
-      <p style="text-align:center">The registration process is NOT instant. You will receive an email when the process is complete.</p>
-      <p style="text-align:center">Your registration will only be processed if ALL of your details look legitimate</p>
+ <!-- ... (your existing HTML code) ... -->
+
+<div class="register-container">
+  <h2>Register</h2>
+  <form id="registerForm">
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <div class="checkbox-container">
+      <input type="checkbox" id="termsCheckbox" required>
+      <label for="termsCheckbox">I accept the <a href="terms_and_conditions.html" target="_blank">T&Cs</a> and <a href="privacy_policy.html" target="_blank">Privacy Policy</a></label>
     </div>
+    <button type="submit" id="registerButton" disabled>Register</button>
+  </form>
+  <p id="registerStatus" class="status-message"></p>
+  <div class="disclaimer">
+    <h4>DISCLAIMER</h4>
+    <p style="text-align:center">The registration process is NOT instant. You will receive an email when the process is complete.</p>
+    <p style="text-align:center">Your registration will only be processed if ALL of your details look legitimate</p>
   </div>
+</div>
+
+<!-- ... (your existing HTML code) ... -->
+
+
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
   <script src="register.js"></script>
