@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("loginForm");
   const usernameInput = document.getElementById("username");
   const passwordInput = document.getElementById("password");
-  const termsCheckbox = document.getElementById("termsCheckbox");
 
   loginForm.addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -58,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const user = users.find(u => u.username === username && u.password === hashedInputPassword);
 
-    if (user && termsCheckbox.checked) {
+    if (user) {
       const clientIP = await getClientIP();
       const deviceInfo = getDeviceInfo();
       const clientGeolocation = await getClientGeolocation(clientIP);
@@ -101,11 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("An error occurred while signing in. Please try again later.");
       });
     } else {
-      alert("Please accept the T&C and Privacy Policy or enter correct credentials");
+      alert("Please enter correct credentials");
     }
-  });
-
-  termsCheckbox.addEventListener('change', function () {
-    document.getElementById("loginButton").disabled = !termsCheckbox.checked;
   });
 });

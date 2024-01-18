@@ -39,6 +39,45 @@ nav ul li a {
     color: #fff;
 }
 
+nav ul li.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  nav ul li.dropdown .dropbtn {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    display: inline-block; /* Ensure the button takes the same space as text */
+  }
+  
+  nav ul li.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%; /* Center the dropdown box relative to the button */
+    transform: translateX(-50%); /* Adjust for half of the width of the dropdown box */
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  nav ul li.dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  nav ul li.dropdown .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  nav ul li.dropdown .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+
 .privacy-container {
     text-align: center;
     background-color: #fff;

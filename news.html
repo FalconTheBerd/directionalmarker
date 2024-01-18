@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - DirectionalMarker</title>
-  <link rel="stylesheet" href="login.css">
+  <title>News - DirectionalMarker</title>
+  <link rel="stylesheet" href="news.css">
   <link rel="icon" href="logo.jpg" type="image/x-icon">
 </head>
 <body>
   <header>
-    <h1>Log In</h1>
+    <h1>News</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -27,7 +27,7 @@
             <a href="reminder.html">Reminders</a>
             <a href="news.html">News</a>
           </div>
-        </li>
+        </li>       
         <li><a href="contact.html">Contact Me</a></li>
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropbtn">Account</a>
@@ -40,29 +40,29 @@
     </nav>
   </header>
 
-  <div class="login-container">
-    <h2>Login</h2>
-    <form id="loginForm">
-      <div class="input-container">
-        <input type="text" id="username" placeholder="Username">
-        <div class="password-container">
-          <input type="password" id="password" placeholder="Password">
-          <input type="checkbox" id="showPasswordCheckbox" onclick="togglePasswordVisibility()">
-        </div>
-      </div>
-      <button type="submit" id="loginButton">Login</button>
-    </form>
-    <p id="loginError" class="error-message"></p>
-  </div>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-  <script src="login.js"></script>
+  <div class="box-container">
+    <div class="box" id="box1">
+      <img src="placeholder.png" alt="Image 1">
+      <div class="box-title">Placeholder</div>
+      <button class="expand-button" onclick="toggleBoxBody('box1')">Expand</button>
+      <div class="box-body">School hasn't started yet. What do you expect?</div>
+    </div>
 
-  <script>
-    function togglePasswordVisibility() {
-      const passwordInput = document.getElementById("password");
-      passwordInput.type = passwordInput.type === "password" ? "text" : "password";
-    }
-  </script>
+    <div class="box" id="box2">
+      <img src="placeholder.png" alt="Image 2">
+      <div class="box-title">Placeholder</div>
+      <button class="expand-button" onclick="toggleBoxBody('box2')">Expand</button>
+      <div class="box-body">School hasn't started yet. What do you expect?</div>
+    </div>
+
+    <div class="box" id="box3">
+      <img src="placeholder.png" alt="Image 3">
+      <div class="box-title">Placeholder</div>
+      <button class="expand-button" onclick="toggleBoxBody('box3')">Expand</button>
+      <div class="box-body">School hasn't started yet. What do you expect?</div>
+    </div>
+  </div>
+
+  <script src="news.js"></script>
 </body>
 </html>
