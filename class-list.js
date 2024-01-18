@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Madeline Saw', class: '9B' },
     { name: 'Kylie Bogdanovski', class: '9B' },
     { name: 'Leo Holmes', class: '9B' },
+    { name: 'Nerea Fierro Estrada', class: '9B' },
 
     { name: 'Oliver Jip', class: '9C' },
     { name: 'Suki Tuxworth', class: '9C' },
@@ -51,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Jude Arrowsmith', class: '9E' },
     { name: 'Lincoln Witherspoon', class: '9E' },
     { name: 'Tamyka Bedlington', class: '9E' },
+    { name: 'Shaurya Vasa', class: '9E' },
 
     { name: 'Melina Kastanis', class: '9F' },
     { name: 'Eva Michaels De Alberqeque', class: '9F' },
