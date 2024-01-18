@@ -102,18 +102,24 @@ document.addEventListener("DOMContentLoaded", function () {
 ];
 
 
-  function filterRoster() {
-      const selectedClass = classSelector.value;
-      const searchTerm = searchBar.value.toLowerCase();
+function filterRoster() {
+    const selectedClass = classSelector.value;
+    const searchTerm = searchBar.value.toLowerCase();
 
-      const filteredRoster = classRosters.filter(student =>
-          (selectedClass === 'All' || student.class === selectedClass) &&
-          student.name.toLowerCase().includes(searchTerm)
-      );
+    let filteredRoster = classRosters.filter(student =>
+      (selectedClass === 'All' || student.class === selectedClass) &&
+      student.name.toLowerCase().includes(searchTerm)
+    );
 
-      displayRoster(filteredRoster);
+    // Sort the roster alphabetically by last name
+    filteredRoster.sort((a, b) => {
+      const lastNameA = a.name.split(' ')[1];
+      const lastNameB = b.name.split(' ')[1];
+      return lastNameA.localeCompare(lastNameB);
+    });
+
+    displayRoster(filteredRoster);
   }
-
   function displayRoster(roster) {
       rosterContainer.innerHTML = '';
 
