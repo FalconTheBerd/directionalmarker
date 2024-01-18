@@ -14,59 +14,59 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateSchedule(selectedClass, selectedDay) {
       const classSchedule = {
         '9A': {
-          Monday: ['English', 'Maths', 'Science', 'Agile Minds'],
-          Tuesday: ['Sport', 'Genius Hour', 'Elective 1', 'Elective 2'],
-          Wednesday: ['Maths','English','Agile Minds','Science'],
-          Thursday: ['Elective 2','Elective 1','English','Maths'],
-          Friday: ['Science','Agile Minds','Elective 2','Elective 1'],
+          Monday: ['English - Mrs Dawkins', 'Maths - Mr McLaren', 'Science - Mrs Altmann', 'Agile Minds - Mr Arsenic'],
+          Tuesday: ['Sport', 'Genius Hour - Mr Callaghan', 'Elective 1', 'Elective 2'],
+          Wednesday: ['Maths - Mr McLaren','English - Mrs Dawkins','Agile Minds - Mr Arsenic','Science - Mrs Altmann'],
+          Thursday: ['Elective 2','Elective 1','English - Mrs Dawkins','Maths - Mr McLaren'],
+          Friday: ['Science - Mrs Altmann','Agile Minds - Mr Arsenic','Elective 2','Elective 1'],
           Saturday: ['No class'],
           Sunday: ['No class']
         },
         '9B': {
-          Monday: ['English', 'Maths', 'Science', 'Agile Minds'],
-          Tuesday: ['Sport', 'Genius Hour', 'Elective 1', 'Elective 2'],
-          Wednesday: ['Maths','English','Agile Minds','Science'],
-          Thursday: ['Elective 2','Elective 1','English','Maths'],
-          Friday: ['Science','Agile Minds','Elective 2','Elective 1'],
+          Monday: ['English - Dr Run', 'Maths -  Mr Morris', 'Science - Mr OConnor', 'Agile Minds - Mr Marzullo'],
+          Tuesday: ['Sport', 'Genius Hour - Miss Labam', 'Elective 1', 'Elective 2'],
+          Wednesday: ['Maths - Mr Morris','English - Dr Run','Agile Minds - Mr Marzullo','Science - Mr OConnor'],
+          Thursday: ['Elective 2','Elective 1','English - Dr Run','Maths - Mr Morris'],
+          Friday: ['Science - Mr OConnor','Agile Minds - Mr Marzullo','Elective 2','Elective 1'],
           Saturday: ['No class'],
           Sunday: ['No class']
         },
         '9C': {
-          Monday: ['English', 'Maths', 'Science', 'Agile Minds'],
-          Tuesday: ['Sport', 'Genius Hour', 'Elective 1', 'Elective 2'],
-          Wednesday: ['Maths','English','Agile Minds','Science'],
-          Thursday: ['Elective 2','Elective 1','English','Maths'],
-          Friday: ['Science','Agile Minds','Elective 2','Elective 1'],
+          Monday: ['English - Mr Arsenic', 'Maths - Ms Keka', 'Science - Ms Keka', 'Agile Minds - Mr Richards'],
+          Tuesday: ['Sport', 'Genius Hour - Mr Lopez', 'Elective 1', 'Elective 2'],
+          Wednesday: ['Maths - Ms Keka','English - Mr Arsenic','Agile Minds - Mr Richards','Science - Ms Keka'],
+          Thursday: ['Elective 2','Elective 1','English - Mr Arsenic','Maths - Ms Keka'],
+          Friday: ['Science - Ms Keka','Agile Minds - Mr Richards','Elective 2','Elective 1'],
           Saturday: ['No class'],
           Sunday: ['No class']
         },
         '9D': {
-          Monday: ['English', 'Maths', 'Science', 'Agile Minds'],
-          Tuesday: ['Sport', 'Genius Hour', 'Elective 1', 'Elective 2'],
-          Wednesday: ['Maths','English','Agile Minds','Science'],
-          Thursday: ['Elective 2','Elective 1','English','Maths'],
-          Friday: ['Science','Agile Minds','Elective 2','Elective 1'],
+          Monday: ['Maths - Mr Ashby', 'Agile Minds - Mr Lloyd', 'English - Ms Vale', 'Science - Mrs Altmann'],
+          Tuesday: ['Sport', 'Genius Hour - Mrs Waters', 'Elective 1', 'Elective 2'],
+          Wednesday: ['Agile Minds - Mr Lloyd','Maths - Mr Ashby','Science - Mrs Altmann','English - Ms Vale'],
+          Thursday: ['Elective 2','Elective 1','Maths - Mr Ashby','Agile Minds - Mr Lloyd'],
+          Friday: ['English - Ms Vale','Science - Mrs Altmann','Elective 2','Elective 1'],
           Saturday: ['No class'],
           Sunday: ['No class']
         },
         '9E': {
-          Monday: ['English', 'Maths', 'Science', 'Agile Minds'],
-          Tuesday: ['Sport', 'Genius Hour', 'Elective 1', 'Elective 2'],
-          Wednesday: ['Maths','English','Agile Minds','Science'],
-          Thursday: ['Elective 2','Elective 1','English','Maths'],
-          Friday: ['Science','Agile Minds','Elective 2','Elective 1'],
+          Monday: ['Maths - Mrs Sardouk', 'Agile Minds - Mr Maas', 'English - Miss Hyndman', 'Science - Ms Keka'],
+          Tuesday: ['Sport', 'Genius Hour - TEABNX', 'Elective 1', 'Elective 2'],
+          Wednesday: ['Agile Minds - Mr Maas', 'Maths - Mrs Sardouk', 'Science - Ms Keka', 'English - Miss Hyndman'],
+          Thursday: ['Elective 2', 'Elective 1', 'Maths - Mrs Sardouk', 'Agile Minds - Mr Maas'],
+          Friday: ['English - Miss Hyndman', 'Science - Ms Keka', 'Elective 2', 'Elective 1'],
           Saturday: ['No class'],
           Sunday: ['No class']
-        },
+        },        
         '9F': {
-          Monday: ['English', 'Maths', 'Science', 'Agile Minds'],
-          Tuesday: ['Sport', 'Genius Hour', 'Elective 1', 'Elective 2'],
-          Wednesday: ['Maths','English','Agile Minds','Science'],
-          Thursday: ['Elective 2','Elective 1','English','Maths'],
-          Friday: ['Science','Agile Minds','Elective 2','Elective 1'],
+          Monday: ['Maths - Mr OConnor', 'Agile Minds - Mr Marzullo', 'English - Ms Ozich', 'Science - Mr Ryan'],
+          Tuesday: ['Sport', 'Genius Hour - Miss Daley', 'Elective 1', 'Elective 2'],
+          Wednesday: ['Agile Minds - Mr Marzullo', 'Maths - Mr OConnor', 'Science', 'English'],
+          Thursday: ['Elective 2', 'Elective 1', 'Maths', 'Agile Minds'],
+          Friday: ['English', 'Science', 'Elective 2', 'Elective 1'],
           Saturday: ['No class'],
           Sunday: ['No class']
-        },
+        },         
         // Add schedules for other classes
       };
   

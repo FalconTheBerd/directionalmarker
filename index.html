@@ -46,6 +46,33 @@
       <p>There is a chat room, ability to set reminders and a timetable of Yr 9 classes. (Even though they are all the same...)</p>
     </section>
 
+    <section id="ai">
+      <h2>FVSSC AI</h2>
+      <p>There is a Fortitude Valley State Secondary College AI in the works that can assist with questions about the school.</p>
+      <button onclick="downloadFile()">Download the AI executable (Coming Soon)</button>
+    
+      <script>
+        function downloadFile() {
+          // You can customize the file URL and name
+          var fileUrl = 'ai.exe';
+          var fileName = 'ai.exe';
+    
+          // Create a virtual anchor element
+          var a = document.createElement('a');
+          a.href = fileUrl;
+          a.download = fileName;
+    
+          // Trigger a click on the anchor element
+          document.body.appendChild(a);
+          a.click();
+    
+          // Remove the anchor element from the DOM
+          document.body.removeChild(a);
+        }
+      </script>
+    </section>
+    
+
     <button id="logoutButton">Logout</button>
   </main>
 

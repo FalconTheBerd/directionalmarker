@@ -12,6 +12,10 @@ body {
     color: #333;
 }
 
+
+
+  
+
 .register-container {
     text-align: center;
     background-color: #fff;
@@ -90,3 +94,27 @@ button:hover {
     margin-bottom: 5px;
     text-align: center;
 }
+
+
+/* ... (your existing CSS code) ... */
+
+.checkbox-container {
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .checkbox-container input {
+    margin-right: 5px;
+  }
+  
+  .checkbox-container label {
+    margin-bottom: 0;
+    margin-left: 5px; /* Adjust this margin as needed */
+  }
+  
+  .checkbox-container a {
+    color: #007bff; /* Adjust link color as needed */
+    text-decoration: underline;
+  }
+  
+  /* ... (your existing CSS code) ... */

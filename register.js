@@ -6,10 +6,18 @@ function hashPassword(password) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const registerForm = document.getElementById("registerForm");
+  const registerButton = document.getElementById("registerButton");
   const registerStatus = document.getElementById("registerStatus");
+  const termsCheckbox = document.getElementById("termsCheckbox");
 
   registerForm.addEventListener("submit", function (event) {
     event.preventDefault();
+
+    // Check if the terms and conditions checkbox is checked
+    if (!termsCheckbox.checked) {
+      alert("Please accept the Terms and Conditions and Privacy Policy.");
+      return; // Stop further processing if the user dismisses the alert
+    }
 
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -47,6 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error('Error:', error);
     });
   });
-});
 
-  
+  termsCheckbox.addEventListener('change', function () {
+    registerButton.disabled = !termsCheckbox.checked;
+  });
+});

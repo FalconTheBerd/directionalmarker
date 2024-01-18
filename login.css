@@ -12,6 +12,8 @@ body {
   color: #333;
 }
 
+
+
 header {
   background-color: #1377F0;
   color: #fff;
@@ -45,16 +47,20 @@ nav ul li a {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 90%; /* Adjusted width for better responsiveness */
-  max-width: 600px; /* Set maximum width */
-  margin: 20px auto; /* Center the container */
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
 }
 
 h2 {
   margin-bottom: 20px;
 }
 
-.input-container input{
+.input-container {
+  position: relative;
+}
+
+.input-container input {
   display: block;
   width: calc(100% - 20px);
   margin: 10px auto;
@@ -63,16 +69,27 @@ h2 {
   border: 1px solid #ccc;
 }
 
-.checkbox-container {
+
+/* ... (previous CSS rules) */
+
+.password-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
+  position: relative; /* Set relative positioning for the container */
 }
 
-.checkbox-container input[type="checkbox"] {
-  margin-right: 10px;
+.password-container input[type="password"] {
+  width: calc(100% - 30px);
 }
+
+#showPasswordCheckbox {
+  position: absolute;
+  top: 30%;
+  right: -270px; /* Adjust this value to control the spacing between the input and checkbox */
+  transform: translateY(-50%);
+}
+
+
 
 button {
   display: block;

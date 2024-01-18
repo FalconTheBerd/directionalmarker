@@ -59,7 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Koby Camilleri', class: '9F' },
     { name: 'Huntah Pett', class: '9F' },
     { name: 'Oliver McArthy', class: '9F' },
-    { name: 'Taleah Stildoph', class: '9F' }
+    { name: 'Taleah Stildoph', class: '9F' },
+    { name: 'Kate Malone', class: '9F' }
 ];
 
 
