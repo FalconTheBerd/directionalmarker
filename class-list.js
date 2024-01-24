@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Caine Simmons', class: '9B' },
     { name: 'Tevita Tuamoheloa', class: '9B' },
     { name: 'Sunday Yelavich', class: '9B' },
+    { name: 'Ruby Stephens-Amor', class: '9B' },
 
     { name: 'Oliver Jip', class: '9C' },
     { name: 'Suki Tuxworth', class: '9C' },
@@ -71,7 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Melika Reid', class: '9C' },
     { name: 'June Hee Sohn', class: '9C' },
     { name: 'Ayesha Stephens', class: '9C' },
-    { name: 'Ruby Stephens-Amor', class: '9C' },
     { name: 'Milla Tuuholaki', class: '9C' },
     { name: 'Holly Zahner', class: '9C' },
 

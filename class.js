@@ -14,20 +14,20 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateSchedule(selectedClass, selectedDay) {
       const classSchedule = {
         '9A': {
-          Monday: ['English - Mrs Dawkins', 'Maths - Mr McLaren', 'Science - Mrs Altmann', 'Agile Minds - Mr Arsenic'],
-          Tuesday: ['Sport', 'Genius Hour - Mr Callaghan', 'Elective 1', 'Elective 2'],
-          Wednesday: ['Maths - Mr McLaren','English - Mrs Dawkins','Agile Minds - Mr Arsenic','Science - Mrs Altmann'],
-          Thursday: ['Elective 2','Elective 1','English - Mrs Dawkins','Maths - Mr McLaren'],
-          Friday: ['Science - Mrs Altmann','Agile Minds - Mr Arsenic','Elective 2','Elective 1'],
+          Monday: ['English - Mrs Dawkins - B403', 'Maths - Mr McLaren - B504', 'Science - Mrs Altmann - B237', 'Agile Minds - Mr Arsenic - B342'],
+          Tuesday: ['Sport', 'Genius Hour - Mr Callaghan - B537', 'Elective 1', 'Elective 2'],
+          Wednesday: ['Maths - Mr McLaren - B504', 'English - Mrs Dawkins - B403', 'Agile Minds - Mr Arsenic - B342', 'Science - Mrs Altmann - B237'],
+          Thursday: ['Elective 2', 'Elective 1', 'English - Mrs Dawkins - B403', 'Maths - Mr McLaren - B504'],
+          Friday: ['Science - Mrs Altmann - B237', 'Agile Minds - Mr Arsenic - B342', 'Elective 2', 'Elective 1'],
           Saturday: ['No class'],
           Sunday: ['No class']
-        },
+      },      
         '9B': {
-          Monday: ['English - Dr Run', 'Maths -  Mr Morris', 'Science - Mr OConnor', 'Agile Minds - Mr Marzullo'],
-          Tuesday: ['Sport', 'Genius Hour - Miss Labam', 'Elective 1', 'Elective 2'],
-          Wednesday: ['Maths - Mr Morris','English - Dr Run','Agile Minds - Mr Marzullo','Science - Mr OConnor'],
-          Thursday: ['Elective 2','Elective 1','English - Dr Run','Maths - Mr Morris'],
-          Friday: ['Science - Mr OConnor','Agile Minds - Mr Marzullo','Elective 2','Elective 1'],
+          Monday: ['English - Dr Run - B405', 'Maths -  Mr Morris - B507', 'Science - Mr OConnor - B238', 'Agile Minds - Mr Marzullo - B343'],
+          Tuesday: ['Sport', 'Genius Hour - Miss Labam - B538', 'Elective 1', 'Elective 2'],
+          Wednesday: ['Maths - Mr Morris - B507','English - Dr Run - B405','Agile Minds - Mr Marzullo - B343','Science - Mr OConnor - B238'],
+          Thursday: ['Elective 2','Elective 1','English - Dr Run - B405','Maths - Mr Morris - B507'],
+          Friday: ['Science - Mr OConnor - B238','Agile Minds - Mr Marzullo - B343','Elective 2','Elective 1'],
           Saturday: ['No class'],
           Sunday: ['No class']
         },
