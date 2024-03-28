@@ -89,18 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         body: JSON.stringify(payload),
       })
-      .then(() => {
-        localStorage.setItem("authenticated", true);
-        localStorage.setItem("name", usernameInput.value);
-        window.location.href = "index.html";
-        alert("Successfully Signed In!");
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert("An error occurred while signing in. Please try again later.");
-      });
-    } else {
-      alert("Please enter correct credentials");
     }
   });
 });

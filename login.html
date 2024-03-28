@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="login.css">
   <link rel="icon" href="logo.jpg" type="image/x-icon">
 </head>
+
 <body>
   <header>
     <h1>Log In</h1>
@@ -54,7 +56,7 @@
     </form>
     <p id="loginError" class="error-message"></p>
   </div>
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
   <script src="login.js"></script>
 
@@ -64,5 +66,70 @@
       passwordInput.type = passwordInput.type === "password" ? "text" : "password";
     }
   </script>
+
+<script type="module">
+  function hashPassword(password) {
+      const sha256 = CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
+      return sha256;
+  }
+
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+      apiKey: "AIzaSyAMQ6qkuWzTOZKJnoal01MrqVaAy32aXlc",
+      authDomain: "directionalmarker.firebaseapp.com",
+      databaseURL: "https://directionalmarker-default-rtdb.firebaseio.com",
+      projectId: "directionalmarker",
+      storageBucket: "directionalmarker.appspot.com",
+      messagingSenderId: "124118111336",
+      appId: "1:124118111336:web:c7ebea9a5869c263c157dd"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+
+  const db = getDatabase();
+
+  document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      let username = document.getElementById("username").value;
+      let password = hashPassword(document.getElementById("password").value);
+
+      loginUser(username, password);
+  });
+
+  function loginUser(username, password) {
+      const dbRef = ref(db);
+
+      get(child(dbRef, 'users/' + username)).then((snapshot) => {
+          if (snapshot.exists()) {
+              if (password === snapshot.val().password) {
+                  localStorage.setItem("authenticated", true);
+                  localStorage.setItem("name", username);
+                  window.location.href = "index.html";
+                  alert("Successfully Signed In!");
+              } else {
+                  console.log("Invalid password");
+              }
+          } else {
+              console.log("User not found");
+          }
+      }).catch((error) => {
+          console.error("Error logging in:", error);
+      });
+  }
+</script>
+
+
+
+
 </body>
+
 </html>
