@@ -1,3 +1,9 @@
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Resetting default margin and padding */
 body, h1, h2, h3, h4, h5, h6, ul, li, p {
     margin: 0;
@@ -6,14 +12,14 @@ body, h1, h2, h3, h4, h5, h6, ul, li, p {
   
   /* Global styles */
   body {
-    font-family: Arial, sans-serif;
+    font-family: Poppins, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
   }
   
   header {
-    background-color: #1377F0;
+    background-color: #303030;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -125,7 +131,7 @@ body, h1, h2, h3, h4, h5, h6, ul, li, p {
   
   footer {
     text-align: center;
-    background-color: #1377F0;
+    background-color: #303030;
     color: #fff;
     padding: 10px 0;
     position: fixed;

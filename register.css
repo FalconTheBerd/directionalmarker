@@ -1,159 +1,177 @@
 /* Resetting default margin and padding */
-body, h1, h2, h3, h4, h5, h6, ul, li, p {
-    margin: 0;
-    padding: 0;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
 }
 
 /* Global styles */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: Poppins, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 
 
-  
+
 
 .register-container {
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 90%; /* Adjusted width for better responsiveness */
-    max-width: 400px; /* Set maximum width */
-    margin: 20px auto; /* Center the container */
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  /* Adjusted width for better responsiveness */
+  max-width: 400px;
+  /* Set maximum width */
+  margin: 20px auto;
+  /* Center the container */
 }
 
 header {
-    background-color: #1377F0;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+  background-color: #303030;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
 
 header h1 {
-    margin: 0;
+  margin: 0;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
+  list-style: none;
+  padding: 0;
+  text-align: center;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+  display: inline;
+  margin-right: 20px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 h2 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-input, button {
-    display: block;
-    width: calc(100% - 20px);
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+input,
+button {
+  display: block;
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 button {
-    padding: 8px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  padding: 8px 20px;
+  background-color: #303030;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+  background-color: #636262;
 }
 
 .status-message {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .disclaimer {
-    margin-top: 20px;
-    text-align: left;
+  margin-top: 20px;
+  text-align: left;
 }
 
 .disclaimer h4 {
-    color: red;
-    margin-bottom: 5px;
-    text-align: center;
+  color: red;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 nav ul li.dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  nav ul li.dropdown .dropbtn {
-    color: white;
-    text-decoration: none;
-    padding: 14px 16px;
-    display: inline-block; /* Ensure the button takes the same space as text */
-  }
-  
-  nav ul li.dropdown .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%; /* Center the dropdown box relative to the button */
-    transform: translateX(-50%); /* Adjust for half of the width of the dropdown box */
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  nav ul li.dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  nav ul li.dropdown .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  nav ul li.dropdown .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-  
+  position: relative;
+  display: inline-block;
+}
+
+nav ul li.dropdown .dropbtn {
+  color: white;
+  text-decoration: none;
+  padding: 14px 16px;
+  display: inline-block;
+  /* Ensure the button takes the same space as text */
+}
+
+nav ul li.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  /* Center the dropdown box relative to the button */
+  transform: translateX(-50%);
+  /* Adjust for half of the width of the dropdown box */
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+nav ul li.dropdown .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+nav ul li.dropdown .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
 
 
 /* ... (your existing CSS code) ... */
 
 .checkbox-container {
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .checkbox-container input {
-    margin-right: 5px;
-  }
-  
-  .checkbox-container label {
-    margin-bottom: 0;
-    margin-left: 5px; /* Adjust this margin as needed */
-  }
-  
-  .checkbox-container a {
-    color: #007bff; /* Adjust link color as needed */
-    text-decoration: underline;
-  }
-  
-  /* ... (your existing CSS code) ... */
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkbox-container input {
+  margin-right: 5px;
+}
+
+.checkbox-container label {
+  margin-bottom: 0;
+  margin-left: 5px;
+  /* Adjust this margin as needed */
+}
+
+.checkbox-container a {
+  color: #007bff;
+  /* Adjust link color as needed */
+  text-decoration: underline;
+}
+
+/* ... (your existing CSS code) ... */
