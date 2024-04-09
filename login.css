@@ -6,7 +6,7 @@ body, h1, h2, h3, h4, h5, h6, ul, li, p {
 
 /* Global styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: Poppins, sans-serif;
   line-height: 1.6;
   background-color: #f4f4f4;
   color: #333;
@@ -52,7 +52,7 @@ nav ul li.dropdown .dropdown-content a:hover {
 
 
 header {
-  background-color: #1377F0;
+  background-color: #303030;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -132,7 +132,7 @@ button {
   display: block;
   width: calc(100% - 20px);
   padding: 8px 20px;
-  background-color: #007bff;
+  background-color: #303030;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -141,7 +141,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #636262;
 }
 
 .error-message {
