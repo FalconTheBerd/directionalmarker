@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Resources - DirectionalMarker</title>
+  <link rel="stylesheet" href="student-resources.css">
+  <link rel="icon" href="logo.jpg" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <img src="logo.jpg" height="75px" width="75px">
+    <h1>Student Resources</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Class Information</a>
+          <div class="dropdown-content">
+            <a href="class.html">Class Schedule</a>
+            <a href="class-list.html">Student List</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Features</a>
+          <div class="dropdown-content">
+            <a href="chat.html">Chat</a>
+            <a href="reminder.html">Reminders</a>
+            <a href="student-resources.html">Student Resources</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact Me</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Account</a>
+          <div class="dropdown-content">
+            <a href="login.html">Log In</a>
+            <a href="register.html">Register</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="box-container">
+    <div class="box" id="box1">
+      <img src="australian-curriculum.jpg" alt="Australian Curriculm Logo" height="200px" width="200px">
+      <div class="box-title">Australian Curriculum</div>
+      <button class="expand-button" onclick="toggleBoxBody('box1')">View More</button>
+      <div class="box-body">Master the learning goals and expectations for your subjects! This <a href="https://www.australiancurriculum.edu.au/">official resource</a> outlines what you'll learn, from Year F to 10. Find helpful resources and feel more prepared for assessments.</div>
+    </div>
+
+    <div class="box" id="box2">
+      <img src="openstax.png" alt="OpenStax Logo" height="200px" width="200px">
+      <div class="box-title">OpenStax</div>
+      <button class="expand-button" onclick="toggleBoxBody('box2')">View More</button>
+      <div class="box-body">Need extra help with science or math? <a href="https://openstax.org/">OpenStax</a> offers free, high-quality textbooks for high school subjects! Explore clear explanations, practice problems, and visuals to deepen your understanding and complement classroom learning. Check out OpenStax and power up your studies!</div>
+    </div>
+
+    <div class="box" id="box3">
+      <img src="placeholder.png" alt="Image 3">
+      <div class="box-title">Placeholder</div>
+      <button class="expand-button" onclick="toggleBoxBody('box3')">View More</button>
+      <div class="box-body">This box is not in use</div>
+    </div>
+  </div>
+
+  <script src="student-resources.js"></script>
+</body>
+
+</html>
