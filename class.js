@@ -68,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
           Saturday: ['No class'],
           Sunday: ['No class']
         },         
-        // Add schedules for other classes
       };
   
       const schedule = classSchedule[selectedClass][selectedDay];

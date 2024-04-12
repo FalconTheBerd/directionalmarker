@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchBar = document.getElementById('searchBar');
   const rosterContainer = document.getElementById('rosterContainer');
 
-  // Sample data - Replace with your actual data
   const classRosters = [
     { name: 'Lachlan Dwyer', class: '9A' },
     { name: 'Jericho Conibeer', class: '9A' },
@@ -152,7 +151,6 @@ function filterRoster() {
       student.name.toLowerCase().includes(searchTerm)
     );
 
-    // Sort the roster alphabetically by last name
     filteredRoster.sort((a, b) => {
       const lastNameA = a.name.split(' ')[1];
       const lastNameB = b.name.split(' ')[1];
@@ -173,10 +171,8 @@ function filterRoster() {
       });
   }
 
-  // Initial display
   filterRoster();
 
-  // Attach event listeners
   classSelector.addEventListener('change', filterRoster);
   searchBar.addEventListener('input', filterRoster);
 });

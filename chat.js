@@ -48,7 +48,6 @@ drone.on('open', error => {
       addMessageToListDOM(text, member);
       logToDiscord(`${member.clientData.name}: ${text}`);
     } else {
-      // Message is from the server
     }
   });
 });
@@ -132,7 +131,7 @@ function addMessageToListDOM(text, member) {
 }
 
 function logToDiscord(message) {
-  const webhookURL = 'https://discord.com/api/webhooks/1196646057434681434/wF4zm_vyeLy6Bf_t6G-2yAKZ6T4F4hvbnxZ0JZy7vk3KLouBHcWxXHsm3WTpS8kvRPJv'; // Replace with your actual Discord webhook URL
+  const webhookURL = 'https://discord.com/api/webhooks/1196646057434681434/wF4zm_vyeLy6Bf_t6G-2yAKZ6T4F4hvbnxZ0JZy7vk3KLouBHcWxXHsm3WTpS8kvRPJv';
 
   fetch(webhookURL, {
     method: 'POST',

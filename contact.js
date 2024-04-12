@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => {
       if (response.ok) {
         alert("Message sent successfully!");
-        window.location.reload(); // Reload the page after success
+        window.location.reload();
       } else {
         throw new Error("Failed to send message");
       }
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => {
       console.error("Error:", error);
       alert("Failed to send message. Please try again later.");
-      window.location.reload(); // Reload the page after error
+      window.location.reload();
     });
   }
 });

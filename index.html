@@ -13,21 +13,13 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4L4SRDSX0E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
 
-  gtag('config', 'G-4L4SRDSX0E');
-</script>
 
 <body>
   <header>
     <img src="logo.jpg" height="75px" width="75px">
     <h1>DirectionalMarker</h1>
-    <div id="user-info"></div> <!-- Added a container for user information -->
+    <div id="user-info"></div>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -43,7 +35,6 @@
           <div class="dropdown-content">
             <a href="chat.html">Chat</a>
             <a href="reminder.html">Reminders</a>
-            <a href="student-resources.html">Student Resources</a>
           </div>
         </li>
         <li><a href="contact.html">Contact Me</a></li>
@@ -59,7 +50,6 @@
   </header>
 
   <main>
-    <!-- Add sections for classes, assignments, schedule, etc. -->
     <section id="info">
       <h2>Info</h2>
       <p>It's Compass, but not. DirectionalMarker is a more student-based version of Compass. </p>
@@ -70,32 +60,6 @@
       <p>There is a chat room, ability to set reminders, list of Year 9 Students, year 9 classes.</p>
     </section>
 
-    <section id="ai">
-      <h2>Yarrabul AI</h2>
-      <p>There is a Fortitude Valley State Secondary College AI in the works that can assist with questions about the
-        school.</p>
-      <button onclick="downloadFile()">Download Yarrabul AI (Coming Soon)</button>
-
-      <script>
-        function downloadFile() {
-          // You can customize the file URL and name
-          var fileUrl = 'ai.exe';
-          var fileName = 'ai.exe';
-
-          // Create a virtual anchor element
-          var a = document.createElement('a');
-          a.href = fileUrl;
-          a.download = fileName;
-
-          // Trigger a click on the anchor element
-          document.body.appendChild(a);
-          a.click();
-
-          // Remove the anchor element from the DOM
-          document.body.removeChild(a);
-        }
-      </script>
-    </section>
 
     <button id="logoutButton">Logout</button>
   </main>
@@ -103,32 +67,23 @@
   <script src="home.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Check if the user is signed in by retrieving the name from local storage
       var name = localStorage.getItem("name");
 
-      // Get the container element where the user information will be displayed
       var userInfoContainer = document.getElementById("user-info");
 
-      // Check if the name is present in local storage
       if (name) {
-        // Split the name into first and last names
         var names = name.split(/(?=[A-Z])/).filter(function (e) { return e.trim().length > 0; });
         var firstName = names[0];
         var lastName = names.slice(1).join(" ");
 
-        // If signed in, display the separated first and last names
         userInfoContainer.textContent = "Logged In As " + firstName + " " + lastName;
       } else {
-        // If not signed in, display "Not Signed In"
         userInfoContainer.textContent = "Not Logged In";
       }
     });
 
-    // Add an event listener for the logout button to clear local storage
     document.getElementById("logoutButton").addEventListener("click", function () {
       localStorage.removeItem("name");
-      // Redirect to the login page or perform any other logout-related actions
-      // window.location.href = "login.html";
     });
   </script>
 </body>

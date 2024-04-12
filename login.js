@@ -1,17 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Function to hash the password using SHA-256
   function hashPassword(password) {
     return CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
   }
 
-  // Function to get basic device information
   function getDeviceInfo() {
     const userAgent = navigator.userAgent;
     const platform = navigator.platform;
     return { userAgent, platform };
   }
 
-  // Function to get the client's IP address using an external service
   async function getClientIP() {
     try {
       const response = await fetch('https://api.ipify.org?format=json');
@@ -23,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Function to get the client's geolocation based on the IP address using an external service
   async function getClientGeolocation(ip) {
     try {
       const response = await fetch(`https://ipapi.co/${ip}/json/`);

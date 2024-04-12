@@ -4,7 +4,6 @@
   font-style: normal;
 }
 
-/* Basic styles, you can modify these as per your design preferences */
 body {
 font-family: Poppins, sans-serif;
   margin: 0;
@@ -37,9 +36,7 @@ nav ul li a {
   color: #fff;
 }
 
-/* ... (Previous CSS) ... */
 
-/* Dropdown styles */
 nav ul li.dropdown {
   position: relative;
   display: inline-block;
@@ -49,15 +46,15 @@ nav ul li.dropdown .dropbtn {
   color: white;
   text-decoration: none;
   padding: 14px 16px;
-  display: inline-block; /* Ensure the button takes the same space as text */
+  display: inline-block;
 }
 
 nav ul li.dropdown .dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
-  left: 50%; /* Center the dropdown box relative to the button */
-  transform: translateX(-50%); /* Adjust for half of the width of the dropdown box */
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -79,7 +76,6 @@ nav ul li.dropdown .dropdown-content a:hover {
 }
 
 
-/* ... (Remaining CSS) ... */
 
 main {
   padding: 20px;

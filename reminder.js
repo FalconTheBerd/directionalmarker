@@ -39,12 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
-    deleteButton.style.display = "block"; // Set the button to display as a block element
+    deleteButton.style.display = "block";
     deleteButton.addEventListener("click", function () {
       reminders.splice(index, 1);
       localStorage.setItem('reminders', JSON.stringify(reminders));
 
-      clearTimeout(reminderTimeouts[index]); // Clear the associated timeout
+      clearTimeout(reminderTimeouts[index]);
       reminderList.removeChild(listItem);
     });
 
@@ -58,15 +58,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const timeout = setTimeout(() => {
         if ('Notification' in window && Notification.permission === 'granted') {
-          // Use Notification API for Android and Windows
           var notify = new Notification(`${reminder.text}`);
         } else if ('serviceWorker' in navigator && 'PushManager' in window) {
-          // Use Web Push API for iOS and other platforms that support service workers
           registerServiceWorker().then(registration => {
             registration.showNotification(`${reminder.text}`);
           });
         } else {
-          // Fallback to alert for unsupported platforms
           alert(`${reminder.text}`);
         }
 
