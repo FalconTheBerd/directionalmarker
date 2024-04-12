@@ -119,6 +119,8 @@
         if (snapshot.exists()) {
           if (password === snapshot.val().password) {
             localStorage.setItem("authenticated", true);
+            localStorage.setItem("permissionLevel", snapshot.val().permlevel)
+            console.log(localStorage.getItem('permissionLevel'))
             localStorage.setItem("name", username);
             window.location.href = "index.html";
             alert("Successfully Signed In!");

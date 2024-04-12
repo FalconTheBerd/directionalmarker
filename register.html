@@ -111,7 +111,8 @@
       set(ref(db, 'users/' + name), {
         name: name,
         email: email,
-        password: password
+        password: password,
+        permlevel: '1'
       }).then(() => {
         // Registration successful, you can redirect the user or show a success message
         console.log("User registered successfully");

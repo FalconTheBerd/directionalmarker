@@ -1,10 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const authenticated = localStorage.getItem("authenticated");
-    if (!authenticated || authenticated !== "true") {
-      window.location.href = "index.html"; // Redirect back to login page if not authenticated or value not in the array
+  const permission = localStorage.getItem("permissionLevel");
+
+  // Check if permission is null (key doesn't exist) or not a valid number
+  if (permission === null || isNaN(Number(permission))) {
+    // Handle invalid permission scenario (e.g., unexpected value in localStorage)
+    console.error("Unexpected permission value in localStorage:", permission);
+    // Optionally redirect or display an error message here
+    return; // Exit the function if permission is invalid
+  }
+
+  // Convert permission to a number for numerical comparison
+  const permissionLevel = Number(permission);
+
+  if (permissionLevel < 1) {
+    window.location.href = "index.html";
     setTimeout(() => {
       alert("Not Logged In");
-    }, 200); // This will delay the execution by 2000 milliseconds (2 seconds)
-    }
-  });
-  
+    }, 200);
+  }
+});
