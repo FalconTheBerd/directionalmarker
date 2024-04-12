@@ -61,6 +61,9 @@
     </section>
 
 
+    <button id="adminButton">Admin Panel</button>
+    <br>
+    <br>
     <button id="logoutButton">Logout</button>
   </main>
 
@@ -85,6 +88,26 @@
     document.getElementById("logoutButton").addEventListener("click", function () {
       localStorage.removeItem("name");
     });
+
+
+    
+    document.getElementById("adminButton").addEventListener("click", function () {
+      const permission = localStorage.getItem("permissionLevel");
+
+      if (permission === null || isNaN(Number(permission))) {
+        console.error("Unexpected permission value in localStorage:", permission);
+        return;
+      }
+
+      const permissionLevel = Number(permission);
+
+      if (permissionLevel == 2) {
+        window.location.href = "admindashboard.html";
+        
+      }
+    });
+
+    
   </script>
 </body>
 
