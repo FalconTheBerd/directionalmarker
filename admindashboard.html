@@ -76,6 +76,50 @@
     <script src="admindashboard.js"></script>
     <script src="authadmin.js"></script>
 
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    
+        const firebaseConfig2 = {
+          apiKey: "AIzaSyAMQ6qkuWzTOZKJnoal01MrqVaAy32aXlc",
+          authDomain: "directionalmarker.firebaseapp.com",
+          databaseURL: "https://directionalmarker-default-rtdb.firebaseio.com",
+          projectId: "directionalmarker",
+          storageBucket: "directionalmarker.appspot.com",
+          messagingSenderId: "124118111336",
+          appId: "1:124118111336:web:c7ebea9a5869c263c157dd"
+        };
+    
+        const app2 = initializeApp(firebaseConfig2);
+    
+        import { getDatabase, ref, child, get, update, remove } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+    
+        const db2 = getDatabase();
+    
+        const name = localStorage.getItem('name')
+    
+        const nameRef = ref(db2, 'users' + name)
+    
+        if (name) {
+          const nameRef = ref(db2, 'users/' + name); // Check the path here, it should match your database structure
+          get(nameRef).then((snapshot) => {
+            if (snapshot.exists()) {
+              console.log("User found in database");
+            } else {
+              console.log("User not found in database");
+              // Code to run when user is not found in database
+              // For example:
+              localStorage.removeItem('name');
+              window.location.href = 'index.html';
+              localStorage.removeItem('permissionLevel')
+            }
+          }).catch((error) => {
+            console.error("Error getting data:", error);
+          });
+        } else {
+          console.log("Name not found in localStorage");
+        }
+    
+      </script>
 
     <script type="module">
 
