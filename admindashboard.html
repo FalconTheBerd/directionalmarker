@@ -60,6 +60,14 @@
             <input type="password" id="textInput" placeholder="Enter new password" required>
             <button type="submit" id="submitButton">Submit</button>
         </div>
+        <br>
+        <br>
+        <div class="password-box">
+            <label for='userDropdown'>Delete a User</label>
+            <select id="deleteDropdown"></select>
+            <input type="password" id="confirmInput" placeholder="Enter new password" required>
+            <button type="submit" id="deleteButton">Submit</button>
+        </div>
 
     </main>
 
@@ -72,7 +80,7 @@
     <script type="module">
 
         document.getElementById("homeButton").addEventListener("click", function () {
-            window.location.href = "index.html"; 
+            window.location.href = "index.html";
         });
 
         function hashPassword(password) {
@@ -94,7 +102,7 @@
 
         const app = initializeApp(firebaseConfig);
 
-        import { getDatabase, ref, child, get, update } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+        import { getDatabase, ref, child, get, update, remove } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
 
         const db = getDatabase();
 
@@ -137,11 +145,70 @@
                 password: hashedPassword
             }).then(() => {
                 alert("Password updated successfully!");
+                window.location.reload();
             }).catch((error) => {
                 console.error("Error updating password:", error);
                 alert("An error occurred. Please try again.");
             });
         }
+
+        const deleteDropdown = document.getElementById('deleteDropdown');
+
+        get(userRef).then((snapshot) => {
+            const users = snapshot.val();
+
+            if (typeof users === 'object') {
+                Object.keys(users).forEach((username) => {
+                    const option = document.createElement('option');
+                    option.text = username;
+                    option.value = username;
+                    deleteDropdown.appendChild(option);
+                });
+            } else {
+                console.error("Users data is not in the expected format!");
+            }
+        });
+
+        const deleteButton = document.getElementById('deleteButton');
+
+        deleteButton.addEventListener('click', deleteUser);
+
+        function deleteUser() {
+            const selectedUser = userDropdown.value;
+            const confirmInput = hashPassword(document.getElementById('confirmInput').value);
+
+            if (!confirmInput) {
+                alert("Please enter your password to confirm user deletion!");
+                return;
+            }
+
+            const adminName = localStorage.getItem('name');
+            const adminRef = ref(db, `users/${adminName}`);
+
+            get(adminRef).then((snapshot) => {
+                if (snapshot.exists()) {
+                    const adminPasswordHash = snapshot.val().password;
+                    if (adminPasswordHash === confirmInput) {
+                        const userRef = ref(db, `users/${selectedUser}`);
+                        remove(userRef).then(() => {
+                            alert("User deleted successfully!");
+                            window.location.reload();
+                        }).catch((error) => {
+                            console.error("Error deleting user:", error);
+                            alert("An error occurred while deleting the user. Please try again.");
+                        });
+                    } else {
+                        alert("Incorrect password. Please try again.");
+                    }
+                } else {
+                    alert("Admin user not found.");
+                }
+            }).catch((error) => {
+                console.error("Error retrieving admin data:", error);
+                alert("An error occurred while retrieving admin data. Please try again.");
+            });
+        }
+
 
     </script>
 
