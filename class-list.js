@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Charlize Heron', class: '10B' },
     { name: 'Suki Tuxworth', class: '10B'},
     { name: 'Eloise Jordan', class: '10B'},
+    { name: 'Isis Bamman', class: '10B'},
 
     { name: 'Not available', class: '10C' },
 
