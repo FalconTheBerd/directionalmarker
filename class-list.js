@@ -7,12 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Terry Tsoukalas', class: '10A' },
     { name: 'Nerea Fierro Estrada', class: '10A' },
     { name: 'Melina Kastanis', class: '10A'},
+    { name: 'Maxwell Duffin-Macleod', class: '10A'},
+    { name: 'Bella Tume', class: '10A'},
 
     { name: 'Charlie Hawkins', class: '10B' },
     { name: 'Suki Tuxworth', class: '10B'},
     { name: 'Eloise Jordan', class: '10B'},
     { name: 'Isis Bamman', class: '10B'},
-    { name: 'Alex Farleyy', class: '10B'},
+    { name: 'Alex Farley', class: '10B'},
+    { name: 'Rose Velthiem', class: '10B'},
 
     { name: 'Cooper Arhanic', class: '10C' },
     { name: 'Eva Micheals De Albuquerque', class: '10C'},
@@ -35,7 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Lalita-Grace Preston-Haira', class: '10F' },
     { name: 'Lachlan Hall', class: '10F' },
     { name: 'Edie Leehy', class: '10F'},
-    { name: 'Oliver Mcarthy', class: '10F'}
+    { name: 'Oliver Mcarthy', class: '10F'},
+    { name: 'Abigail Bates', class: '10F'},
+
 ];
 
 
