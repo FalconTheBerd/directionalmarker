@@ -7,18 +7,20 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Terry Tsoukalas', class: '10A' },
     { name: 'Nerea Fierro Estrada', class: '10A' },
 
-    { name: 'N/A', class: '10B' },
+    { name: 'Not available', class: '10B' },
 
-    { name: 'N/A', class: '10C' },
+    { name: 'Not available', class: '10C' },
 
     { name: 'Kylie Bogdanovski', class: '10D' },
     { name: 'Terry Tsoukalas', class: '10D' },
+    { name: 'Valentina Perez Milton', class: '10D'},
 
     { name: 'Lachlan Dwyer', class: '10E' },
+    { name: 'June Hee Sohn', class: '10E'},
     
-
     { name: 'Lalita-Grace Preston-Haira', class: '10F' },
     { name: 'Lachlan Hall', class: '10F' },
+    { name: 'Edie Leehy', class: '10F'},
 ];
 
 
