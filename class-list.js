@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Doug (June Hee Sohn)', class: '10E'},
     { name: 'Lucy Rowlinson', class: '10E'},
     { name: 'Mika Paraskevas', class: '10E'},
+    { name: 'Ava Herring', class: '10E'},
     
     { name: 'Lalita-Grace Preston-Haira', class: '10F' },
     { name: 'Lachlan Hall', class: '10F' },
@@ -50,8 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Oliver Mcarthy', class: '10F'},
     { name: 'Abigail Bates', class: '10F'},
     { name: 'Madeline Saw', class: '10F'},
-    { name: 'Holly Rabbidge', class: '10F'}
-
+    { name: 'Holly Rabbidge', class: '10F'},
+    { name: 'Ermia Rashidi', class: '10F'},
+    { name: 'Voldina Mputu Ilua', class: '10F'}
 ];
 
 
