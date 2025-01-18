@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Melina Kastanis', class: '10A'},
     { name: 'Maxwell Duffin-Macleod', class: '10A'},
     { name: 'Bella Tume', class: '10A'},
+    { name: 'Oliver Jip', class: '10A'},
 
     { name: 'Charlie Hawkins', class: '10B' },
     { name: 'Suki Tuxworth', class: '10B'},
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Eva Micheals De Albuquerque', class: '10C'},
     { name: 'Koby Camilleri', class: '10C'},
     { name: 'Monique Fallone', class: '10C'},
+    { name: 'Lachlan Coote', class: '10C'},
 
     { name: 'Kylie Bogdanovski', class: '10D' },
     { name: 'Valentina Perez Milton', class: '10D'},
@@ -29,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Liam Malone', class: '10D'},
     { name: 'Sari Woodward', class: '10D'},
     { name: 'Sullivan Green', class: '10D'},
+    { name: 'Melika Reid', class: '10D'},
 
     { name: 'Lachlan Dwyer', class: '10E' },
     { name: 'Doug (June Hee Sohn)', class: '10E'},
