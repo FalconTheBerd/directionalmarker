@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Bella Tume', class: '10A'},
     { name: 'Oliver Jip', class: '10A'},
     { name: 'Sofia Von Treifeldt', class: '10A'},
+    { name: 'Torr Benevuti', class: '10A'},
 
     { name: 'Charlie Hawkins', class: '10B' },
     { name: 'Suki Tuxworth', class: '10B'},
@@ -26,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Monique Fallone', class: '10C'},
     { name: 'Lachlan Coote', class: '10C'},
     { name: 'Nadine Igiraneza', class: '10C'},
+    { name: 'Jai Briggs', class: '10C'},
+    { name: 'Rohan Fairbairn', class: '10C'},
 
     { name: 'Kylie Bogdanovski', class: '10D' },
     { name: 'Valentina Perez Milton', class: '10D'},
