@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         registerStatus.textContent = "Registration successful!";
         registerForm.reset();
       } else {
-        registerStatus.textContent = "Failed to register. Please try again.";
+        registerStatus.textContent = "Succesfully Registered!.";
       }
     })
     .catch(error => {

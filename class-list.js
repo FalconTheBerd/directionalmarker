@@ -40,10 +40,11 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: 'Melika Reid', class: '10D'},
 
     { name: 'Lachlan Dwyer', class: '10E' },
-    { name: 'Doug (June Hee Sohn)', class: '10E'},
+    { name: 'June Hee Sohn (Doug)', class: '10E'},
     { name: 'Lucy Rowlinson', class: '10E'},
     { name: 'Mika Paraskevas', class: '10E'},
     { name: 'Ava Herring', class: '10E'},
+    { name: 'Ester Matayas', class: '10E'},
     
     { name: 'Lalita-Grace Preston-Haira', class: '10F' },
     { name: 'Lachlan Hall', class: '10F' },
