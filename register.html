@@ -53,10 +53,13 @@
       <input type="text" id="name" placeholder="Name" required>
       <input type="email" id="email" placeholder="Email" required>
       <input type="password" id="password" placeholder="Password" required>
+      <input type="text" id="class" placeholder="Class" required>
+      <input type="text" id="electiveOne" placeholder="Elective One (Monday L2)" required>
+      <input type="text" id="electiveTwo" placeholder="Elective Two (Monday L3)" required>
+      <input type="text" id="electiveThree" placeholder="Elective Three (Monday L4)" required>
       <div class="checkbox-container">
         <input type="checkbox" id="termsCheckbox" required>
-        <label for="termsCheckbox">I accept the <a href="terms.html" target="_blank">T&Cs</a> and <a
-            href="privacy-policy.html" target="_blank">Privacy Policy</a></label>
+        <label for="termsCheckbox">I accept the <a href="terms.html" target="_blank">T&Cs</a> and <a href="privacy-policy.html" target="_blank">Privacy Policy</a></label>
       </div>
       <button type="submit" id="registerButton" disabled>Register</button>
     </form>
@@ -96,16 +99,24 @@
       let name = document.getElementById("name").value;
       let email = document.getElementById("email").value;
       let password = hashPassword(document.getElementById("password").value);
+      let electiveOne = document.getElementById("electiveOne").value;
+      let electiveTwo = document.getElementById("electiveTwo").value;
+      let electiveThree = document.getElementById("electiveThree").value;
+      let Class = document.getElementById("class").value;
 
-      registerUser(name, email, password);
+      registerUser(name, email, password, electiveOne, electiveTwo, electiveThree, Class);
     });
 
-    function registerUser(name, email, password) {
+    function registerUser(name, email, password, e1, e2, e3, c) {
       set(ref(db, 'users/' + name), {
         name: name,
         email: email,
         password: password,
-        permlevel: '1'
+        permlevel: '1',
+        elective1: e1,
+        elective2: e2,
+        electiveThree: e3,
+        class: c
       }).then(() => {
         console.log("User registered successfully");
       }).catch((error) => {
