@@ -1,0 +1,596 @@
+/* =========================
+   RESET
+========================= */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+body {
+    font-family: Poppins, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background-color: #303030;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li.dropdown .dropbtn {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    display: inline-block;
+}
+
+nav ul li.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+}
+
+nav ul li.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li.dropdown .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul li.dropdown .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* =========================
+   REGISTER CONTAINER
+========================= */
+
+.register-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    width: 96%;
+    max-width: 1500px;
+
+    margin: 20px auto;
+}
+
+.register-container h2 {
+    margin-bottom: 10px;
+}
+
+.instructions {
+    margin-bottom: 25px;
+    color: #666;
+}
+
+
+/* =========================
+   TIMETABLE
+========================= */
+
+.timetable {
+    display: grid;
+
+    /*
+       First column = period
+       Next five columns = Monday-Friday
+    */
+
+    grid-template-columns:
+        75px
+        repeat(5, minmax(0, 1fr));
+
+    gap: 6px;
+
+    width: 100%;
+}
+
+
+/* =========================
+   DAY HEADERS
+========================= */
+
+.corner {
+    min-height: 45px;
+}
+
+.day-header {
+    background-color: #303030;
+    color: #fff;
+
+    padding: 8px 4px;
+
+    border-radius: 5px;
+
+    font-weight: 600;
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   PERIOD LABEL
+========================= */
+
+.period-label {
+    background-color: #f4f4f4;
+
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    min-height: 120px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.period-label strong {
+    font-size: 17px;
+}
+
+.period-label span {
+    font-size: 10px;
+    line-height: 1.3;
+
+    color: #666;
+
+    margin-top: 4px;
+}
+
+
+/* =========================
+   PERIOD CARD
+========================= */
+
+.period-card {
+    background-color: #fff;
+
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    min-height: 120px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    transition:
+        box-shadow 0.2s,
+        border-color 0.2s;
+}
+
+.period-card:hover {
+    border-color: #999;
+
+    box-shadow:
+        0 0 8px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   EMPTY PERIOD
+========================= */
+
+.empty-period {
+    color: #888;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+}
+
+.empty-period span {
+    font-size: 26px;
+    line-height: 1;
+    font-weight: 300;
+}
+
+.empty-period small {
+    font-size: 10px;
+}
+
+
+/* =========================
+   FILLED CLASS
+========================= */
+
+.class-details {
+    width: 100%;
+    padding: 8px;
+
+    text-align: left;
+}
+
+.class-code {
+    font-weight: 700;
+    font-size: 14px;
+
+    word-break: break-word;
+}
+
+.class-name {
+    font-size: 11px;
+    line-height: 1.3;
+
+    margin-top: 2px;
+    margin-bottom: 7px;
+
+    word-break: break-word;
+}
+
+.class-info {
+    font-size: 9px;
+    line-height: 1.4;
+
+    color: #666;
+
+    word-break: break-word;
+}
+
+
+/* =========================
+   BREAK / TRANSITION
+========================= */
+
+.break-label {
+    min-height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    color: #888;
+}
+
+.break-cell {
+    min-height: 30px;
+
+    background-color: #f4f4f4;
+
+    border-radius: 5px;
+}
+
+
+/* =========================
+   SUBMIT AREA
+========================= */
+
+.submit-area {
+    margin-top: 25px;
+}
+
+#completionMessage {
+    margin-bottom: 12px;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+#submitButton {
+    background-color: #303030;
+    color: #fff;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 12px 25px;
+
+    font-family: Poppins, sans-serif;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+#submitButton:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#submitButton:not(:disabled):hover {
+    opacity: 0.85;
+}
+
+#submitStatus {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-overlay {
+    display: none;
+
+    position: fixed;
+
+    z-index: 100;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.55);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.class-modal {
+    position: relative;
+
+    background-color: #fff;
+
+    width: 100%;
+    max-width: 500px;
+
+    padding: 25px;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 0 15px rgba(0, 0, 0, 0.25);
+
+    text-align: left;
+}
+
+.class-modal h2 {
+    margin-bottom: 3px;
+}
+
+#modalPeriod {
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close-button {
+    position: absolute;
+
+    top: 8px;
+    right: 12px;
+
+    border: none;
+    background: none;
+
+    font-size: 28px;
+
+    color: #666;
+
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #222;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+#classForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#classForm label {
+    font-size: 13px;
+
+    margin-bottom: 4px;
+}
+
+#classForm input {
+    width: 100%;
+
+    padding: 10px;
+
+    margin-bottom: 14px;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+}
+
+#classForm input:focus {
+    outline: none;
+
+    border-color: #666;
+}
+
+
+/* =========================
+   FORM BUTTONS
+========================= */
+
+.form-buttons {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 5px;
+}
+
+.form-buttons button {
+    padding: 9px 18px;
+
+    border-radius: 4px;
+
+    font-family: Poppins, sans-serif;
+
+    cursor: pointer;
+}
+
+#cancelButton {
+    background-color: #eee;
+
+    border: 1px solid #ccc;
+
+    color: #333;
+}
+
+#cancelButton:hover {
+    background-color: #ddd;
+}
+
+#saveButton {
+    background-color: #303030;
+
+    border: 1px solid #303030;
+
+    color: #fff;
+}
+
+#saveButton:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================
+   MOBILE / SMALL SCREENS
+========================= */
+
+@media (max-width: 900px) {
+
+    .register-container {
+        width: 99%;
+        padding: 10px;
+    }
+
+    /*
+       Keep all five days together,
+       but allow horizontal scrolling
+       on small screens.
+    */
+
+    .timetable {
+        grid-template-columns:
+            65px
+            repeat(5, 120px);
+
+        overflow-x: auto;
+    }
+
+    .period-label {
+        min-width: 65px;
+    }
+
+    .day-header {
+        min-width: 120px;
+    }
+
+    .period-card {
+        min-width: 120px;
+    }
+
+}

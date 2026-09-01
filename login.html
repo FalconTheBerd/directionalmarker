@@ -1,180 +1,315 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Login - DirectionalMarker</title>
+
   <link rel="stylesheet" href="login.css">
   <link rel="icon" href="logo.jpg" type="image/x-icon">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
+
 </head>
 
 <body>
-  <header>
-    <img src="logo.jpg" height="75px" width="75px">
 
-    <h1>Log In</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn">Class Information</a>
-          <div class="dropdown-content">
-            <a href="class.html">Class Schedule</a>
-            <a href="class-list.html">Student List</a>
-          </div>
-        </li>
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn">Features</a>
-          <div class="dropdown-content">
-            <a href="chat.html">Chat</a>
-            <a href="reminder.html">Reminders</a>
-          </div>
-        </li>
-        <li><a href="contact.html">Contact Me</a></li>
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn">Account</a>
-          <div class="dropdown-content">
-            <a href="login.html">Log In</a>
-            <a href="register.html">Register</a>
-          </div>
-        </li>
-      </ul>
-    </nav>
+  <header>
+
+
+<img src="logo.jpg" height="75px" width="75px">
+
+<h1>Log In</h1>
+
+<nav>
+  <ul>
+
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">
+        Class Information
+      </a>
+
+      <div class="dropdown-content">
+        <a href="timetable.html">Class Schedule</a>
+        <a href="register-class.html">Register Timetable</a>
+      </div>
+    </li>
+
+    
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">
+        Account
+      </a>
+
+      <div class="dropdown-content">
+        <a href="login.html">Log In</a>
+        <a href="register.html">Register</a>
+      </div>
+    </li>
+
+  </ul>
+</nav>
+
+
   </header>
 
   <div class="login-container">
-    <h2>Login</h2>
-    <form id="loginForm">
-      <div class="input-container">
-        <input type="text" id="username" placeholder="Username">
-        <div class="password-container">
-          <input type="password" id="password" placeholder="Password">
-          <input type="checkbox" id="showPasswordCheckbox" onclick="togglePasswordVisibility()">
-        </div>
-      </div>
-      <button type="submit" id="loginButton">Login</button>
-    </form>
-    <p id="loginError" class="error-message"></p>
+
+
+<h2>Login</h2>
+
+<form id="loginForm">
+
+  <div class="input-container">
+
+    <input
+      type="email"
+      id="email"
+      placeholder="Email"
+      required
+    >
+
+    <div class="password-container">
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        required
+      >
+
+      <input
+        type="checkbox"
+        id="showPasswordCheckbox"
+      >
+
+    </div>
+
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-  <script src="login.js"></script>
 
-  <script>
-    function togglePasswordVisibility() {
-      const passwordInput = document.getElementById("password");
-      passwordInput.type = passwordInput.type === "password" ? "text" : "password";
-    }
-  </script>
+  <button
+    type="submit"
+    id="loginButton"
+  >
+    Login
+  </button>
+
+</form>
+
+
+<p id="loginError" class="error-message"></p>
+
+
+  </div>
 
   <script type="module">
-    function hashPassword(password) {
-      const sha256 = CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
-      return sha256;
-    }
 
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { initializeApp }
+      from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+
+    import {
+      getAuth,
+      signInWithEmailAndPassword
+    }
+      from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+
+
+    // Firebase configuration
 
     const firebaseConfig = {
+
       apiKey: "AIzaSyAMQ6qkuWzTOZKJnoal01MrqVaAy32aXlc",
+
       authDomain: "directionalmarker.firebaseapp.com",
-      databaseURL: "https://directionalmarker-default-rtdb.firebaseio.com",
+
       projectId: "directionalmarker",
+
       storageBucket: "directionalmarker.appspot.com",
+
       messagingSenderId: "124118111336",
+
       appId: "1:124118111336:web:c7ebea9a5869c263c157dd"
+
     };
+
+
+    // Initialize Firebase
 
     const app = initializeApp(firebaseConfig);
 
-    import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+    const auth = getAuth(app);
 
-    const db = getDatabase();
 
-    document.getElementById("loginForm").addEventListener("submit", function (event) {
-      event.preventDefault(); 
+    // Get form elements
 
-      let username = document.getElementById("username").value;
-      let password = hashPassword(document.getElementById("password").value);
+    const loginForm =
+      document.getElementById("loginForm");
 
-      loginUser(username, password);
-    });
+    const loginError =
+      document.getElementById("loginError");
 
-    function loginUser(username, password) {
-      const dbRef = ref(db);
+    const loginButton =
+      document.getElementById("loginButton");
 
-      get(child(dbRef, 'users/' + username)).then((snapshot) => {
-        if (snapshot.exists()) {
-          if (password === snapshot.val().password) {
-            localStorage.setItem("authenticated", true);
-            localStorage.setItem("permissionLevel", snapshot.val().permlevel)
-            console.log(localStorage.getItem('permissionLevel'))
-            localStorage.setItem("name", username);
-            window.location.href = "index.html";
-            alert("Successfully Signed In!");
-          } else {
-            console.log("Invalid password");
-          }
-        } else {
-          console.log("User not found");
+
+    // Login
+
+    loginForm.addEventListener("submit", async function (event) {
+
+      event.preventDefault();
+
+
+      const email =
+        document.getElementById("email").value.trim();
+
+      const password =
+        document.getElementById("password").value;
+
+
+      // Clear previous error
+
+      loginError.textContent = "";
+
+
+      // Disable button while logging in
+
+      loginButton.disabled = true;
+
+      loginButton.textContent = "Logging in...";
+
+
+      try {
+
+        // Sign in using Firebase Authentication
+
+        const userCredential =
+          await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+          );
+
+
+        const user = userCredential.user;
+
+
+        console.log("Successfully logged in:", user);
+
+
+        // Redirect to the home page
+
+        window.location.href = "index.html";
+
+
+      } catch (error) {
+
+        console.error("Login error:", error);
+
+
+        switch (error.code) {
+
+          case "auth/invalid-email":
+
+            loginError.textContent =
+              "Please enter a valid email address.";
+
+            break;
+
+
+          case "auth/user-not-found":
+
+            loginError.textContent =
+              "No account was found with that email.";
+
+            break;
+
+
+          case "auth/wrong-password":
+
+            loginError.textContent =
+              "Incorrect password.";
+
+            break;
+
+
+          case "auth/invalid-credential":
+
+            loginError.textContent =
+              "Incorrect email or password.";
+
+            break;
+
+
+          case "auth/user-disabled":
+
+            loginError.textContent =
+              "This account has been disabled.";
+
+            break;
+
+
+          case "auth/too-many-requests":
+
+            loginError.textContent =
+              "Too many login attempts. Please try again later.";
+
+            break;
+
+
+          default:
+
+            loginError.textContent =
+              "Login failed. Please try again.";
+
         }
-      }).catch((error) => {
-        console.error("Error logging in:", error);
-      });
-    }
-  </script>
 
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
 
-  const firebaseConfig2 = {
-    apiKey: "AIzaSyAMQ6qkuWzTOZKJnoal01MrqVaAy32aXlc",
-    authDomain: "directionalmarker.firebaseapp.com",
-    databaseURL: "https://directionalmarker-default-rtdb.firebaseio.com",
-    projectId: "directionalmarker",
-    storageBucket: "directionalmarker.appspot.com",
-    messagingSenderId: "124118111336",
-    appId: "1:124118111336:web:c7ebea9a5869c263c157dd"
-  };
+        loginButton.disabled = false;
 
-  const app2 = initializeApp(firebaseConfig2);
+        loginButton.textContent = "Login";
 
-  import { getDatabase, ref, child, get, update, remove } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
-
-  const db2 = getDatabase();
-
-  const name = localStorage.getItem('name')
-
-  const nameRef = ref(db2, 'users' + name)
-
-  if (name) {
-    const nameRef = ref(db2, 'users/' + name); // Check the path here, it should match your database structure
-    get(nameRef).then((snapshot) => {
-      if (snapshot.exists()) {
-        console.log("User found in database");
-      } else {
-        console.log("User not found in database");
-        // Code to run when user is not found in database
-        // For example:
-        localStorage.removeItem('name');
-        window.location.href = 'index.html';
-        localStorage.removeItem('permissionLevel')
       }
-    }).catch((error) => {
-      console.error("Error getting data:", error);
+
     });
-  } else {
-    console.log("Name not found in localStorage");
-  }
 
-</script>
 
+    // Show/hide password
+
+    document
+      .getElementById("showPasswordCheckbox")
+      .addEventListener("change", function () {
+
+        const passwordInput =
+          document.getElementById("password");
+
+
+        if (this.checked) {
+
+          passwordInput.type = "text";
+
+        } else {
+
+          passwordInput.type = "password";
+
+        }
+
+      });
+
+  </script>
 
 </body>
 

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Timetable - DirectionalMarker</title>
+
+    <link rel="stylesheet" href="timetable.css">
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+
+    <img src="logo.jpg" height="75" width="75" alt="DirectionalMarker logo">
+
+    <h1>Timetable</h1>
+
+    <nav>
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li class="dropdown">
+
+                <a href="javascript:void(0)" class="dropbtn">
+                    Class Information
+                </a>
+
+                <div class="dropdown-content">
+                    <a href="timetable.html">
+                        Timetable
+                    </a>
+
+                    <a href="register-class.html">
+                        Register Timetable
+                    </a>
+
+                </div>
+
+            </li>
+
+            <li class="dropdown">
+
+                <a href="javascript:void(0)" class="dropbtn">
+                    Account
+                </a>
+
+                <div class="dropdown-content">
+
+                    <a href="login.html">
+                        Log In
+                    </a>
+
+                    <a href="register.html">
+                        Register
+                    </a>
+
+                </div>
+
+            </li>
+
+        </ul>
+    </nav>
+
+</header>
+
+
+<main>
+
+    <!-- SEARCH -->
+
+    <section class="search-container">
+
+        <h2>Find a Student</h2>
+
+        <p class="search-description">
+            Search for a student's name to view their timetable.
+        </p>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="studentSearch"
+                placeholder="Search for a name..."
+                autocomplete="off">
+
+            <button
+                id="clearSearch"
+                type="button">
+                Clear
+            </button>
+
+        </div>
+
+        <div
+            id="searchResults"
+            class="search-results">
+        </div>
+
+    </section>
+
+
+    <!-- SELECTED STUDENT -->
+
+    <section
+        id="selectedStudent"
+        class="selected-student"
+        style="display: none;">
+
+        <h2 id="studentName"></h2>
+
+    </section>
+
+
+    <!-- TIMETABLE -->
+
+    <section
+        id="timetableContainer"
+        class="timetable-container"
+        style="display: none;">
+
+        <div class="timetable">
+
+
+            <!-- MONDAY -->
+
+            <div class="day-column">
+
+                <div class="day-header">
+                    Monday
+                </div>
+
+                <div class="period-card"
+                    data-day="Monday"
+                    data-period="P1">
+                </div>
+
+                <div class="break">
+                    Break
+                </div>
+
+                <div class="period-card"
+                    data-day="Monday"
+                    data-period="P2">
+                </div>
+
+                <div class="transition">
+                    Transition
+                </div>
+
+                <div class="period-card"
+                    data-day="Monday"
+                    data-period="P3">
+                </div>
+
+                <div class="break">
+                    Break
+                </div>
+
+                <div class="period-card"
+                    data-day="Monday"
+                    data-period="P4">
+                </div>
+
+            </div>
+
+
+            <!-- TUESDAY -->
+
+            <div class="day-column">
+
+                <div class="day-header">
+                    Tuesday
+                </div>
+
+                <div class="period-card"
+                    data-day="Tuesday"
+                    data-period="P1">
+                </div>
+
+                <div class="break">
+                    Break
+                </div>
+
+                <div class="period-card"
+                    data-day="Tuesday"
+                    data-period="P2">
+                </div>
+
+                <div class="transition">
+                    Transition
+                </div>
+
+                <div class="period-card"
+                    data-day="Tuesday"
+                    data-period="P3">
+                </div>
+
+                <div class="break">
+                    Break
+                </div>
+
+                <div class="period-card"
+                    data-day="Tuesday"
+                    data-period="P4">
+                </div>
+
+            </div>
+
+
+            <!-- WEDNESDAY -->
+
+            <div class="day-column">
+
+                <div class="day-header">
+                    Wednesday
+                </div>
+
+                <div class="period-card"
+                    data-day="Wednesday"
+                    data-period="P1">
+                </div>
+
+                <div class="break">
+                    Break
+                </div>
+
+                <div class="period-card"
+                    data-day="Wednesday"
+                    data-period="P2">
+                </div>
+
+                <div class="transition">
+                    Transition
+                </div>
+
+                <div class="period-card"
+                    data-day="Wednesday"
+                    data-period="P3">
+                </div>
+
+                <div class="break">
+                    Break
+                </div>
+
+                <div class="period-card"
+                    data-day="Wednesday"
+                    data-period="P4">
+                </div>
+
+            </div>
+
+
+            <!-- THURSDAY -->
+
+            <div class="day-column">
+
+                <div class="day-header">
+                    Thursday
+                </div>
+
+                <div class="period-card"
+                    data-day="Thursday"
+                    data-period="P1">
+                </div>
+
+                <div class="break">
+                    Break
+                </div>
+
+                <div class="period-card"
+                    data-day="Thursday"
+                    data-period="P2">
+                </div>
+
+                <div class="transition">
+                    Transition
+                </div>
+
+                <div class="period-card"
+                    data-day="Thursday"
+                    data-period="P3">
+                </div>
+
+                <div class="break">
+                    Break
+                </div>
+
+                <div class="period-card"
+                    data-day="Thursday"
+                    data-period="P4">
+                </div>
+
+            </div>
+
+
+            <!-- FRIDAY -->
+
+            <div class="day-column">
+
+                <div class="day-header">
+                    Friday
+                </div>
+
+                <div class="period-card"
+                    data-day="Friday"
+                    data-period="P1">
+                </div>
+
+                <div class="break">
+                    Break
+                </div>
+
+                <div class="period-card"
+                    data-day="Friday"
+                    data-period="P2">
+                </div>
+
+                <div class="transition">
+                    Transition
+                </div>
+
+                <div class="period-card"
+                    data-day="Friday"
+                    data-period="P3">
+                </div>
+
+                <div class="break">
+                    Break
+                </div>
+
+                <div class="period-card"
+                    data-day="Friday"
+                    data-period="P4">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CLASS POPUP -->
+
+    <div
+        id="classModal"
+        class="modal">
+
+        <div class="modal-content">
+
+            <button
+                id="closeModal"
+                class="close-modal"
+                type="button">
+                ×
+            </button>
+
+            <h2 id="classModalTitle">
+                Class
+            </h2>
+
+            <p
+                id="classModalDetails"
+                class="class-modal-details">
+            </p>
+
+            <h3>
+                Students in this class
+            </h3>
+
+            <div
+                id="classStudents"
+                class="class-students">
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<script
+    type="module"
+    src="timetable.js">
+</script>
+
+</body>
+
+</html>

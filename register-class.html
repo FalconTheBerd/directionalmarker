@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Register Classes - DirectionalMarker</title>
+
+  <link rel="stylesheet" href="register-class.css">
+  <link rel="icon" href="logo.jpg" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+
+
+<img src="logo.jpg" height="75px" width="75px">
+
+<h1>Register Classes</h1>
+
+<nav>
+  <ul>
+
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">
+        Class Information
+      </a>
+
+      <div class="dropdown-content">
+        <a href="class.html">Class Schedule</a>
+        <a href="class-list.html">Student List</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">
+        Features
+      </a>
+
+      <div class="dropdown-content">
+        <a href="chat.html">Chat</a>
+        <a href="reminder.html">Reminders</a>
+        <a href="student-resources.html">Student Resources</a>
+      </div>
+    </li>
+
+    <li>
+      <a href="contact.html">Contact Me</a>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">
+        Account
+      </a>
+
+      <div class="dropdown-content">
+        <a href="login.html">Log In</a>
+        <a href="register.html">Register</a>
+      </div>
+    </li>
+
+  </ul>
+</nav>
+
+
+  </header>
+
+  <main>
+
+
+<div class="register-container">
+
+  <h2>Register Your Timetable</h2>
+
+  <p class="instructions">
+    Click on a period to enter your class information.
+    Classes will automatically carry over to the next period,
+    but you can edit individual periods for exceptions.
+  </p>
+
+
+  <div class="timetable">
+
+    <!-- DAY HEADERS -->
+
+    <div class="corner"></div>
+
+    <div class="day-header">Monday</div>
+    <div class="day-header">Tuesday</div>
+    <div class="day-header">Wednesday</div>
+    <div class="day-header">Thursday</div>
+    <div class="day-header">Friday</div>
+
+
+    <!-- P1 -->
+
+    <div class="period-label">
+      <strong>P1</strong>
+      <span>9:35<br>-<br>10:45</span>
+    </div>
+
+    <div class="period-card" data-day="Monday" data-period="P1">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+    <div class="period-card" data-day="Tuesday" data-period="P1">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+    <div class="period-card" data-day="Wednesday" data-period="P1">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+    <div class="period-card" data-day="Thursday" data-period="P1">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+    <div class="period-card" data-day="Friday" data-period="P1">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+
+    <!-- BREAK -->
+
+    <div class="break-label">BREAK</div>
+
+    <div class="break-cell"></div>
+    <div class="break-cell"></div>
+    <div class="break-cell"></div>
+    <div class="break-cell"></div>
+    <div class="break-cell"></div>
+
+
+    <!-- P2 -->
+
+    <div class="period-label">
+      <strong>P2</strong>
+      <span>11:15<br>-<br>12:25</span>
+    </div>
+
+    <div class="period-card" data-day="Monday" data-period="P2">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+    <div class="period-card" data-day="Tuesday" data-period="P2">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+    <div class="period-card" data-day="Wednesday" data-period="P2">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+    <div class="period-card" data-day="Thursday" data-period="P2">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+    <div class="period-card" data-day="Friday" data-period="P2">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+
+    <!-- TRANSITION -->
+
+    <div class="break-label">TRANSITION</div>
+
+    <div class="break-cell"></div>
+    <div class="break-cell"></div>
+    <div class="break-cell"></div>
+    <div class="break-cell"></div>
+    <div class="break-cell"></div>
+
+
+    <!-- P3 -->
+
+    <div class="period-label">
+      <strong>P3</strong>
+      <span>12:35<br>-<br>1:45</span>
+    </div>
+
+    <div class="period-card" data-day="Monday" data-period="P3">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+    <div class="period-card" data-day="Tuesday" data-period="P3">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+    <div class="period-card" data-day="Wednesday" data-period="P3">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+    <div class="period-card" data-day="Thursday" data-period="P3">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+    <div class="period-card" data-day="Friday" data-period="P3">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+
+    <!-- TRANSITION -->
+
+    <div class="break-label">TRANSITION</div>
+
+    <div class="break-cell"></div>
+    <div class="break-cell"></div>
+    <div class="break-cell"></div>
+    <div class="break-cell"></div>
+    <div class="break-cell"></div>
+
+
+    <!-- P4 -->
+
+    <div class="period-label">
+      <strong>P4</strong>
+      <span>2:15<br>-<br>3:25</span>
+    </div>
+
+    <div class="period-card" data-day="Monday" data-period="P4">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+    <div class="period-card" data-day="Tuesday" data-period="P4">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+    <div class="period-card" data-day="Wednesday" data-period="P4">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+    <div class="period-card" data-day="Thursday" data-period="P4">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+    <div class="period-card" data-day="Friday" data-period="P4">
+      <div class="empty-period">
+        <span>+</span>
+        <small>Add Class</small>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="submit-area">
+
+    <p id="completionMessage">
+      Complete all 20 periods before submitting.
+    </p>
+
+    <button id="submitButton" disabled>
+      Submit Timetable
+    </button>
+
+    <p id="submitStatus"></p>
+
+  </div>
+
+</div>
+
+
+  </main>
+
+  <!-- CLASS ENTRY MODAL -->
+
+  <div class="modal-overlay" id="classModal">
+
+
+<div class="class-modal">
+
+  <button class="close-button" id="closeModal">
+    &times;
+  </button>
+
+  <h2 id="modalTitle">Add Class</h2>
+
+  <p id="modalPeriod"></p>
+
+
+  <form id="classForm">
+
+    <label for="classCode">
+      Class Code
+    </label>
+
+    <input
+      type="text"
+      id="classCode"
+      placeholder="E.g. MAG121A"
+      maxlength="30"
+      required
+    >
+
+
+    <label for="className">
+      Class Name
+    </label>
+
+    <input
+      type="text"
+      id="className"
+      placeholder="E.g. General Mathematics"
+      maxlength="100"
+      required
+    >
+
+
+    <label for="teacherName">
+      Teacher Name
+    </label>
+
+    <input
+      type="text"
+      id="teacherName"
+      placeholder="E.g. Mr Adaway"
+      maxlength="100"
+      required
+    >
+
+
+    <label for="roomCode">
+      Room Code
+    </label>
+
+    <input
+      type="text"
+      id="roomCode"
+      placeholder="E.g. M212"
+      maxlength="30"
+      required
+    >
+
+
+    <div class="form-buttons">
+
+      <button type="button" id="cancelButton">
+        Cancel
+      </button>
+
+      <button type="submit" id="saveButton">
+        Save Class
+      </button>
+
+    </div>
+
+  </form>
+
+</div>
+
+
+  </div>
+
+  <script type="module" src="register-class.js"></script>
+
+</body>
+
+</html>

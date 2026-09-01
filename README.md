@@ -4,8 +4,6 @@ DirectionalMarker is a web application designed to help students manage their sc
 Features
 Home Page: Overview of the application with a brief description and features.
 Classes: View and manage your class information, including teachers and schedules.
-Chat: Join discussions and communicate with classmates.
-Contact Us: Send messages or inquiries to the administration.
 # Getting Started
 To use DirectionalMarker, follow these steps:
 Go to https://falcontheberd.github.io/directionalmarker
